@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h2  style ="color: white;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-right:0;">Digits</h2><h2  style ="color: #a4915e;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-left:0">UNLIMITED</h2>
+    <h2  style ="color: white;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-right:0;font-size:4vh">Digits</h2><h2  style ="color: #a4915e;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-left:0;font-size:4vh">UNLIMITED</h2>
     <style>
         /* Optional CSS to style the circle */
         .circle {
@@ -333,6 +333,107 @@
             background-color: black;
             color: white;
 
+        }
+
+        @media(max-width: 400px){
+          .circle {
+            top: 28%;
+            left: 10%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleTwo {
+            top: 28%;
+            left: 40%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleThree {
+            top: 28%;
+            left: 70%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleFour {
+            top: 48%;
+            left: 10%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleFive {
+            top: 48%;
+            left: 40%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleSix {
+            top: 48%;
+            left: 70%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleSubtract {
+            position: absolute; 
+            top: 67%; 
+            left: 51.5%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleAdd {
+            position: absolute; 
+            top: 67%; 
+            left: 70%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleMultiply {
+            position: absolute; 
+            top: 67%; 
+            left: 33.5%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleDivision {
+            position: absolute; 
+            top: 67%; 
+            left: 15%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .Undo {
+            position: absolute; 
+            top: 80%; 
+            left: 51.5%;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 50%;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
+        .circleTest {
+            position: absolute; 
+            top: 80%; 
+            left: 33.5%;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 50%;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
+          h1{
+            margin-top: 5vh;
+            font-size: 10vh;
+          }
         }
 
     </style>
@@ -789,8 +890,8 @@
             clickSub = false;
             clickMul = false;
             clickDiv = false;
+            clickAdd = true
           }
-          clickAdd = true
         }
         else{
           clickAdd = false
@@ -812,8 +913,8 @@
             clickAdd = false;
             clickMul = false;
             clickDiv = false;
+            clickSub = true
           }
-          clickSub = true
         }
         else{
           clickSub = false
@@ -835,8 +936,8 @@
             clickSub = false;
             clickAdd = false;
             clickDiv = false;
+            clickMul = true
           }
-          clickMul = true
         }
         else{
           clickMul = false
@@ -858,8 +959,8 @@
             clickSub = false;
             clickAdd = false;
             clickMul = false;
+            clickDiv = true
           }
-          clickDiv = true
         }
         else{
           clickDiv = false
