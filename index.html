@@ -335,7 +335,7 @@
 
         }
 
-        @media(max-width: 1170px){
+        @media(max-width: 400px){
           .circle {
             top: 28%;
             left: 10%;
@@ -502,7 +502,7 @@
               circleOne.textContent = lasty[1]
               circleOne.style.color = "white";
               circleOne.style.border = "calc(0.008 * 100vw) solid #a4915e";
-              y[0] = lasty[1]
+              y[0] = Number(lasty[1])
               onedel = false
             }
             else if(lasty[0] == 1){
@@ -510,35 +510,35 @@
               circleTwo.style.color = "white";
               circleTwo.style.border = "calc(0.008 * 100vw) solid #a4915e";
               twodel = false
-              y[1] = lasty[1]
+              y[1] = Number(lasty[1])
             }
             else if(lasty[0] == 2){
               circleThree.textContent = lasty[1]
               circleThree.style.color = "white";
               circleThree.style.border = "calc(0.008 * 100vw) solid #a4915e";
               threedel = false
-              y[2] = lasty[1]
+              y[2] = Number(lasty[1])
             }
             else if(lasty[0] == 3){
               circleFour.textContent = lasty[1]
               circleFour.style.color = "white";
               circleFour.style.border = "calc(0.008 * 100vw) solid #a4915e";
               fourdel = false
-              y[3] = lasty[1]
+              y[3] = Number(lasty[1])
             }
             else if(lasty[0] == 4){
               circleFive.textContent = lasty[1]
               circleFive.style.color = "white";
               circleFive.style.border = "calc(0.008 * 100vw) solid #a4915e";
               fivedel = false
-              y[4] = lasty[1]
+              y[4] = Number(lasty[1])
             }
             else if(lasty[0] == 5){
               circleSix.textContent = lasty[1]
               circleSix.style.color = "white";
               circleSix.style.border = "calc(0.008 * 100vw) solid #a4915e";
               sixdel = false
-              y[5] = lasty[1]
+              y[5] = Number(lasty[1])
             }
           }
           clickedOne = false
@@ -556,6 +556,7 @@
           first = -1
           second = -2
           firstIn = -1
+          curop = ""
         }
       }
       function openPopupTwo() {
@@ -825,10 +826,8 @@
 
       first = -1
       firstIn = -1
-      OpIn = -1
       second = -2
       curop = ""
-      numGone = 0
 
       // y = [1,2,3,4,5,6]
       // y = [Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2]
