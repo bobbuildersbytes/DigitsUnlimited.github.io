@@ -466,7 +466,7 @@
             // const Level = dropdown.value;
             if(Level == "Easy"){
               closePopupTwo()
-              while(bigNum >= 3){
+              while(numTar <= 0){
                 generate()
               }
               // pls = Level
@@ -475,7 +475,7 @@
             }
             else if(Level == "Medium"){
               closePopupTwo()
-              while(bigNum >= 4){
+              while(numTar <= 0){
                 generateMedium()
               }
             }
@@ -483,13 +483,13 @@
               closePopupTwo()
               do{
                 generateHard()
-              }while(bigNum <= 2)
+              }while(numTar <= 0)
             }
             else if(Level == "Impossible"){
               closePopupTwo()
               do{
                 generateImpossible()
-              }while(bigNum <= 3)
+              }while(numTar <= 0)
             }
       }
       function closePopupTwo() {
