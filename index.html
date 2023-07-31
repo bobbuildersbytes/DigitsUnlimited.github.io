@@ -230,9 +230,19 @@
             align-items: center; /* Center horizontally */
             justify-content: center;
         }
+        .popupThree {
+            background-color: #000000;
+            padding: 4%;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
         .circleTest {
             position: absolute; 
-            top: 100%; 
+            top: 95%; 
             left: 42.5%;
             width: 7vw;
             height: 7vw;
@@ -252,7 +262,7 @@
         }
         .Undo {
             position: absolute; 
-            top: 100%; 
+            top: 95%; 
             left: 52.5%;
             width: 7vw;
             height: 7vw;
@@ -320,6 +330,17 @@
             justify-content: center;
             align-items: center;
         }
+        .overlayThree {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
         #DifficultyLevel {
           width: 10lw;
           height: 5vw;
@@ -337,8 +358,75 @@
             color: white;
 
         }
+        .Info{
+          position: absolute; 
+            top: 1%; 
+            left: 95%;
+            width: 2.3vw;
+            height: 2.3vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            font-family: sans-serif;
+        }
+
+        .pill-button {
+              position: absolute;
+            top : 1%;
+            left : 85%;
+            background-color: #a4915e;
+            color: white;
+            font-size: 1vw;
+            padding: 1vw;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          }
 
         @media(max-width: 1170px){
+          .pill-button {
+              position: absolute;
+            top : 1%;
+            left : 65%;
+            background-color: #a4915e;
+            color: white;
+            font-size: 2vh;
+            padding: 1vh;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          }
+          .Info{
+          position: absolute; 
+            top: 1%; 
+            left: 90%;
+            width: 3.8vh;
+            height: 3.8vh;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
           .circle {
             top: 28%;
             left: 10%;
@@ -453,12 +541,24 @@
     <div class="circleSubtract" onclick="calcSub()">-</div>
     <div class="circleMultiply" onclick="calcMul()">x</div>
     <div class="circleDivision" onclick="calcDiv()">÷</div>
+    <div class="Info" onclick = "Information()">?</div>
     <div class="circleTest" onclick="closePopup()">Quit</div>
     <div class="Undo" onclick = "undo()">Undo</div>
+    <button class="pill-button" onclick = "bye()">Daily Mode</button>
     <div class="overlay">
         <div class="popup">
             <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
             <button onclick="closePopup()">Play Again</button>
+        </div>
+    </div>
+
+    <div class="overlayThree">
+        <div class="popupThree">
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Perform operations on the 6 given numbers in order to reach the target number</h3>
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Invalid calculations will not be counted(ex. calculations that results in fractions or negative numbers)</h3>
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Use the undo button if you wish to redo an operation and the quit button to generate a new puzzle</h3>
+            <!-- <p>Contact us <a href="sub.html">here</a>.</p> -->
+            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw">Close</button>
         </div>
     </div>
 
@@ -488,6 +588,18 @@
       y = []
       pls = null
       undos = []
+      function bye(){
+        const websiteURL = "sub.html"; // Replace this with the URL of the destination website
+        window.location.href = websiteURL;
+      }
+      function Information(){
+        var overlay = document.querySelector(".overlayThree");
+        overlay.style.display = "flex";
+      }
+      function closePopupThree() {
+            var overlayagain = document.querySelector(".overlayThree");
+            overlayagain.style.display = "none";
+      }
       function undo() {
         if(undos.length > 0){
           console.log("it's been done")
@@ -600,7 +712,7 @@
       function closePopupTwo() {
             var overlayagain = document.querySelector(".overlayagain");
             overlayagain.style.display = "none";
-        }
+      }
       function openPopup() {
             var overlay = document.querySelector(".overlay");
             overlay.style.display = "flex";
