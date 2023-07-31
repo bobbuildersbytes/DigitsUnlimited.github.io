@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Calculator</title>
+  <h2  style ="color: white;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-right:0;font-size:4vh">Digits</h2><h2  style ="color: #a4915e;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-left:0;font-size:4vh">DAILY</h2>
+  <style>
+        .circle {
+            position: absolute; 
+            font-family: sans-serif;
+            top: 28%;
+            left: 29%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+        }
+        .circleTwo {
+            position: absolute; 
+            top: 28%; 
+            left: 45%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+        .circleThree {
+            position: absolute; 
+            top: 28%; 
+            left: 61%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+        .circleFour {
+            position: absolute; 
+            top: 55%; 
+            left: 29%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+        .circleFive {
+            position: absolute; 
+            top: 55%; 
+            left: 45%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+        .circleSix {
+            position: absolute; 
+            top: 55%; 
+            left: 61%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+
+        .circleAdd {
+            position: absolute; 
+            top: 80%; 
+            left: 62.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+
+        .circleSubtract {
+            position: absolute; 
+            top: 80%; 
+            left: 52.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+        .circleMultiply {
+            position: absolute; 
+            top: 80%; 
+            left: 42.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+
+        .circleDivision {
+            position: absolute; 
+            top: 80%; 
+            left: 32.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+            font-family: sans-serif;
+        }
+       .popup {
+            background-color: #000000;
+            padding: 5%;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
+        .bigpopup {
+            background-color: #000000;
+            padding: 8%;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
+        .popupThree {
+            background-color: #000000;
+            padding: 4%;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
+        .circleTest {
+            position: absolute; 
+            top: 95%; 
+            left: 42.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            font-family: sans-serif;
+        }
+        .Undo {
+            position: absolute; 
+            top: 95%; 
+            left: 52.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            font-family: sans-serif;
+        }
+
+        .GiveUp {
+            position: absolute; 
+            top: 95%; 
+            left: 42.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5vw;
+            font-family: sans-serif;
+        }
+
+        .Next {
+            position: absolute; 
+            top: 95%; 
+            left: 62.5%;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: white;
+            font-family: sans-serif;
+            font-size: 8vw;
+            text-align: center;
+            padding :0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        button {
+
+          text-align: center;
+          border-radius: 3%;
+          font-family: sans-serif;
+          font-size:  2vw;
+          color: white;
+          background-color: black;
+          padding:  2vw;
+          border: 0.3vw solid #a4915e;
+        }
+/*        h2 {
+            color: white;
+            font-family: sans-serif;
+            font-size: 8vw;
+            text-align: center;
+        }*/
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlayagain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlayThree {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .pill-button {
+              position: absolute;
+            top : 1%;
+            left : 85%;
+            background-color: #a4915e;
+            color: white;
+            font-size: 1vw;
+            padding: 1vw;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          }
+
+        #DifficultyLevel {
+          width: 10lw;
+          height: 5vw;
+          background-color: transparent;
+          color: white;
+          font-size: 2vw;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+          padding: 1vw;
+          border: calc(0.005 * 100vw) solid #a4915e;
+        }
+        #DifficultyLevel option {
+            background-color: black;
+            color: white;
+
+        }
+        .Info{
+          position: absolute; 
+            top: 1%; 
+            left: 95%;
+            width: 2.3vw;
+            height: 2.3vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            font-family: sans-serif;
+        }
+
+        @media(max-width: 1170px){
+            .pill-button {
+              position: absolute;
+            top : 1%;
+            left : 60%;
+            background-color: #a4915e;
+            color: white;
+            font-size: 2vh;
+            padding: 1vh;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          }
+          .Info{
+          position: absolute; 
+            top: 1%; 
+            left: 90%;
+            width: 3.8vh;
+            height: 3.8vh;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
+
+          .circle {
+            top: 28%;
+            left: 10%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleTwo {
+            top: 28%;
+            left: 40%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleThree {
+            top: 28%;
+            left: 70%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleFour {
+            top: 48%;
+            left: 10%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleFive {
+            top: 48%;
+            left: 40%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleSix {
+            top: 48%;
+            left: 70%;
+            width: 12vh;
+            height: 12vh;
+            font-size: 5vh;
+          }
+          .circleSubtract {
+            position: absolute; 
+            top: 67%; 
+            left: 51.5%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleAdd {
+            position: absolute; 
+            top: 67%; 
+            left: 70%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleMultiply {
+            position: absolute; 
+            top: 67%; 
+            left: 33.5%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .circleDivision {
+            position: absolute; 
+            top: 67%; 
+            left: 15%;
+            width: 8vh;
+            height: 8vh;
+            font-size: 4vh;
+          }
+          .Undo {
+            position: absolute; 
+            top: 80%; 
+            left: 51.5%;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 50%;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
+        .GiveUp {
+            position: absolute; 
+            top: 80%; 
+            left: 33.5%;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5vh;
+            font-family: sans-serif;
+        }
+        .circleTest {
+            position: absolute; 
+            top: 80%; 
+            left: 33.5%;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 50%;
+            font-size: 2vh;
+            font-family: sans-serif;
+        }
+          h1{
+            margin-top: 5vh;
+            font-size: 10vh;
+          }
+        }
+    </style>
+</head>
+<body bgcolor="#000000">
+
+    <h1 id="Target"></h1>
+    <div class="circle" onclick="calcOne()"></div>
+    <div class="circleTwo" onclick="calcTwo()"></div>
+    <div class="circleThree" onclick="calcThree()"></div>
+    <div class="circleFour" onclick="calcFour()"></div>
+    <div class="circleFive" onclick="calcFive()"></div>
+    <div class="circleSix" onclick="calcSix()"></div>
+    <div class="circleAdd" onclick="calcAdd()">+</div>
+    <div class="circleSubtract" onclick="calcSub()">-</div>
+    <div class="circleMultiply" onclick="calcMul()">x</div>
+    <div class="circleDivision" onclick="calcDiv()">÷</div>
+    <div class="Info" onclick = "Information()">?</div>
+    <!-- <div class="circleTest" onclick="closePopup()">Quit</div> -->
+    <!-- <div class="Next" onclick = "Next()">Next</div> -->
+    <div class="GiveUp" onclick="giveUp()">Give Up</div>
+    <div class="Undo" onclick = "undo()">Undo</div>
+    <button class="pill-button" onclick = "bye()">Unlimited Mode</button>
+
+    <div class="overlay">
+        <div class="popup">
+            <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
+            <button onclick="Next()">Next Level</button>
+        </div>
+    </div>
+
+    <div class="overlayagain">
+        <div class="bigpopup">
+            <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
+            <button onclick="copyToClipboard(total)">Share</button>
+        </div>
+    </div>
+
+    <div class="overlayThree">
+        <div class="popupThree">
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Perform operations on the 6 given numbers in order to reach the target number</h3>
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Invalid calculations will not be counted(ex. calculations that results in fractions or negative numbers)</h3>
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Advance through the 4 levels given daily to reach the end and share your results</h3>
+            <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Use the undo button if you wish to redo an operation and the give up button to skip the level you are on</h3>
+            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw">Close</button>
+        </div>
+    </div>
+
+    <!-- <div class="overlayagain">
+        <div class="bigpopup">
+            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:3vw">Welcome to Digits Unlimited!</h2>
+            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:2vw">Choose Your Difficulty Level</h2>
+            <select id="DifficultyLevel" onchange="openPopupTwo()">
+              <option value="Select">Select</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+              <option value="Impossible">Impossible</option>
+            </select>
+        </div>
+    </div> -->
+
+  <script>
+    actions = ""
+    total = ""
+    daySince = -1
+    function bye(){
+        const websiteURL = "index.html"; // Replace this with the URL of the destination website
+        window.location.href = websiteURL;
+      }
+    function countSubstringOccurrences(mainString, subString) {
+      let count = 0;
+      let index = -1;
+      
+      while ((index = mainString.indexOf(subString, index + 1)) !== -1) {
+        count++;
+      }
+
+      return count;
+    }
+    function copyToClipboard(textToCopy) {
+        textToCopy = "Digits Daily #" + (daySince+1) + " (" + (4-countSubstringOccurrences(textToCopy,"Skipped")) + "/4)" +"\n" + textToCopy + "\n" + actions
+        // const line1 = "Digits #112 (15/15⭐)";
+        // const line2 = "61 (61)   ✖➖➖";
+        // const line3 = "106 (106) ✖➕➗➕➕";
+        // const line4 = "229 (229) ✖➕";
+
+        // // Combine the four lines with newlines
+        // const textToCopy = `${line1}\n${line2}\n${line3}\n${line4}`;
+
+        const tempElement = document.createElement("textarea");
+
+        // Set the text content of the temporary element
+        tempElement.value = textToCopy;
+
+        // Append the temporary element to the document
+        document.body.appendChild(tempElement);
+
+        // Select and copy the text
+        tempElement.select();
+        document.execCommand("copy");
+
+        // Remove the temporary element
+        document.body.removeChild(tempElement);
+
+        // Optional: Show a message to indicate that text was copied
+        alert("Text copied to clipboard!");
+    }
+    // Function to calculate the days between two dates
+    function calculateDaysAway(targetDate) {
+      const currentDate = new Date();
+      const targetDateObj = new Date(targetDate);
+      const timeDifference = targetDateObj - currentDate;
+      const daysAway = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+      return daysAway;
+    }
+    function Next(){
+        diff = diff+1
+        circleOne.textContent = x[diff][1]
+
+      // var circleTwo = document.querySelector(".circleTwo");
+      circleTwo.textContent = x[diff][2]
+
+      // var circleThree = document.querySelector(".circleThree");
+      circleThree.textContent = x[diff][3]
+
+      // var circleFour = document.querySelector(".circleFour");
+      circleFour.textContent = x[diff][4]
+
+      // var circleFive = document.querySelector(".circleFive");
+      circleFive.textContent = x[diff][5]
+
+      // var circleSix = document.querySelector(".circleSix");
+      circleSix.textContent = x[diff][6]
+
+     // var headingElement = document.getElementById("Target");
+      headingElement.innerHTML = x[diff][0]
+
+      y = x[diff].slice(1)
+      target = x[diff][0]
+
+      clickedOne = false
+      clickedTwo = false
+      clickedThree = false
+      clickedFour = false
+      clickedFive = false
+      clickedSix = false
+
+      onedel = false
+      twodel = false
+      threedel = false
+      fourdel = false
+      fivedel = false
+      sixdel = false
+
+      circleOne.style.backgroundColor = "black";
+      circleTwo.style.backgroundColor = "black";
+      circleThree.style.backgroundColor = "black";
+      circleFour.style.backgroundColor = "black";
+      circleFive.style.backgroundColor = "black";
+      circleSix.style.backgroundColor = "black";
+      circleOne.style.color = "white";
+        circleOne.style.border = "calc(0.008 * 100vw) solid #a4915e";
+
+        circleTwo.style.color = "white";
+        circleTwo.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleThree.style.color = "white";
+        circleThree.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleFour.style.color = "white";
+        circleFour.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleFive.style.color = "white";
+        circleFive.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleSix.style.color = "white";
+        circleSix.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        total = total + "\n" + actions
+        console.log(total)
+        actions = target + " "
+      first = -1
+      second = -2
+      firstIn = -1
+      curop = ""
+
+
+
+      var overlay = document.querySelector(".overlay");
+        overlay.style.display = "none";
+    }
+    function giveUp(){
+        if(diff < 3){
+            actions = "Skipped"
+            Next()
+        }
+        else{
+            total = total + "\n" + "Skipped"
+            actions = ""
+            openWinPopup()
+        }
+    }
+    diff = 0
+    x = []
+    // Function to display the result on the webpage
+    function displayDaysAway() {
+      const targetDate = '2023-07-31';
+      const daysAway = calculateDaysAway(targetDate);
+
+      // Get the current date in EST
+      const currentDateTimeEST = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+
+      // document.getElementById('daysAway').innerText = `The current date in EST is ${currentDateTimeEST}. 
+      //   There are ${daysAway} days away from July 29, 2023 in EST.`;
+
+      // Calculate time until midnight in EST
+      const currentTime = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+      console.log(currentTime)
+      const msUntilMidnight = new Date(`${currentDateTimeEST} 23:59:59`) - new Date(`${currentDateTimeEST} ${currentTime}`);
+      daySince = Math.abs(daysAway)
+      x = z[Math.abs(daysAway)]
+      // circleOne.textContent = z[Math.abs(daysAway)][0]
+
+      // var circleOne = document.querySelector(".circle");
+      circleOne.textContent = x[diff][1]
+
+      // var circleTwo = document.querySelector(".circleTwo");
+      circleTwo.textContent = x[diff][2]
+
+      // var circleThree = document.querySelector(".circleThree");
+      circleThree.textContent = x[diff][3]
+
+      // var circleFour = document.querySelector(".circleFour");
+      circleFour.textContent = x[diff][4]
+
+      // var circleFive = document.querySelector(".circleFive");
+      circleFive.textContent = x[diff][5]
+
+      // var circleSix = document.querySelector(".circleSix");
+      circleSix.textContent = x[diff][6]
+
+     // var headingElement = document.getElementById("Target");
+      headingElement.innerHTML = x[diff][0]
+
+      target = x[diff][0]
+      actions = target + " "
+
+      y = x[diff].slice(1)
+      // Schedule a page reload at midnight in EST
+      setTimeout(function() {
+        location.reload();
+      }, msUntilMidnight);
+    }
+
+    z = [[[64,25, 12, 8, 18, 21, 14],[183,15, 17, 4, 6, 5, 7],[422,20, 6, 23, 19, 5, 3],[683,3, 24, 22, 12, 20, 16]],[[77,12, 4, 19, 15, 11, 21],[221,24, 3, 20, 19, 9, 13],[432,11, 4, 7, 15, 19, 14],[518,14, 19, 21, 17, 20, 22]],[[54,22, 11, 9, 12, 19, 8],[243,25, 12, 5, 7, 4, 18],[276,20, 9, 18, 14, 16, 24],[982,14, 6, 21, 22, 8, 5]],[[60,3, 9, 6, 7, 2, 11],[260,5, 12, 9, 4, 6, 8],[447,5, 19, 2, 16, 6, 15],[940,20, 3, 11, 5, 4, 8]]]
+    // var circleOne = document.querySelector(".circle");
+
+    onedel = false
+      twodel = false
+      threedel = false
+      fourdel = false
+      fivedel = false
+      sixdel = false
+      // openPopupTwo()
+      target = null
+      y = []
+      pls = null
+      undos = []
+      function Information(){
+        var overlay = document.querySelector(".overlayThree");
+        overlay.style.display = "flex";
+      }
+      function closePopupThree() {
+            var overlayagain = document.querySelector(".overlayThree");
+            overlayagain.style.display = "none";
+      }
+      function undo() {
+        if(undos.length > 0){
+          console.log("it's been done")
+          last = undos.splice(-1)[0]
+          console.log(last)
+          last = last.split("/")
+          // console.log(last)
+          for(let i = 0;i<last.length;i++){
+            lasty = last[i]
+            lasty = lasty.split("|")
+            actions = actions.slice(0, actions.length - 1)
+            console.log(lasty)
+            console.log(lasty[0])
+            console.log(lasty[1])
+            if(lasty[0] == 0){
+              circleOne.textContent = lasty[1]
+              circleOne.style.color = "white";
+              circleOne.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              y[0] = Number(lasty[1])
+              onedel = false
+            }
+            else if(lasty[0] == 1){
+              circleTwo.textContent = lasty[1]
+              circleTwo.style.color = "white";
+              circleTwo.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              twodel = false
+              y[1] = Number(lasty[1])
+            }
+            else if(lasty[0] == 2){
+              circleThree.textContent = lasty[1]
+              circleThree.style.color = "white";
+              circleThree.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              threedel = false
+              y[2] = Number(lasty[1])
+            }
+            else if(lasty[0] == 3){
+              circleFour.textContent = lasty[1]
+              circleFour.style.color = "white";
+              circleFour.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              fourdel = false
+              y[3] = Number(lasty[1])
+            }
+            else if(lasty[0] == 4){
+              circleFive.textContent = lasty[1]
+              circleFive.style.color = "white";
+              circleFive.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              fivedel = false
+              y[4] = Number(lasty[1])
+            }
+            else if(lasty[0] == 5){
+              circleSix.textContent = lasty[1]
+              circleSix.style.color = "white";
+              circleSix.style.border = "calc(0.008 * 100vw) solid #a4915e";
+              sixdel = false
+              y[5] = Number(lasty[1])
+            }
+          }
+          clickedOne = false
+          clickedTwo = false
+          clickedThree = false
+          clickedFour = false
+          clickedFive = false
+          clickedSix = false
+          circleOne.style.backgroundColor = "black";
+          circleTwo.style.backgroundColor = "black";
+          circleThree.style.backgroundColor = "black";
+          circleFour.style.backgroundColor = "black";
+          circleFive.style.backgroundColor = "black";
+          circleSix.style.backgroundColor = "black";
+          first = -1
+          second = -2
+          firstIn = -1
+          curop = ""
+        }
+      }
+
+      function openWinPopup(){
+        var overlayagain = document.querySelector(".overlayagain");
+        overlayagain.style.display = "flex";
+        // copyToClipboard(total)
+      }
+      function openPopupTwo() {
+            var overlayagain = document.querySelector(".overlayagain");
+            overlayagain.style.display = "flex";
+            const dropdown = document.getElementById("DifficultyLevel");
+            const Level = dropdown.value;
+            // const dropdown = document.getElementById("DifficultyLevel");
+            // const Level = dropdown.value;
+            // if(Level == "Easy"){
+            //   closePopupTwo()
+            //   while(numTar <= 0){
+            //     generate()
+            //   }
+            //   // pls = Level
+            //   // console.log(Level)
+            //   // console.log(pls)
+            // }
+            // else if(Level == "Medium"){
+            //   closePopupTwo()
+            //   while(numTar <= 0){
+            //     generateMedium()
+            //   }
+            // }
+            // else if(Level == "Hard"){
+            //   closePopupTwo()
+            //   do{
+            //     generateHard()
+            //   }while(numTar <= 0)
+            // }
+            // else if(Level == "Impossible"){
+            //   closePopupTwo()
+            //   do{
+            //     generateImpossible()
+            //   }while(numTar <= 0)
+            // }
+      }
+      function closePopupTwo() {
+            var overlayagain = document.querySelector(".overlayagain");
+            overlayagain.style.display = "none";
+      }
+      function openPopup() {
+            var overlay = document.querySelector(".overlay");
+            overlay.style.display = "flex";
+      }
+      function closePopup() {
+            location.reload();
+      }
+      function operations(array,x,y,targety,level){
+        addarray = [...array]
+        a = addarray[x]
+        b = addarray[y]
+        addarray.push(addarray[x]+addarray[y])
+        addarray.splice(x,1)
+        if(x < y){
+          addarray.splice(y-1,1)
+        }
+        else{
+          addarray.splice(y,1)
+        }
+        // console.log(addarray)
+        combinations(addarray,targety,level)
+
+
+        minarray = [...array]
+        a = minarray[x]
+        b = minarray[y]
+        minarray.push(Math.abs((minarray[x]-minarray[y])))
+        minarray.splice(x,1)
+        if(x < y){
+          minarray.splice(y-1,1)
+        }
+        else{
+          minarray.splice(y,1)
+        }
+        // console.log(minarray)
+        combinations(minarray,targety,level)
+
+
+        mularray = [...array]
+        a = mularray[x]
+        b = mularray[y]
+        mularray.push((mularray[x]*mularray[y]))
+        mularray.splice(x,1)
+        if(x < y){
+          mularray.splice(y-1,1)
+        }
+        else{
+          mularray.splice(y,1)
+        }
+        // console.log(mularray)
+        combinations(mularray,targety,level)
+
+
+        divarray = [...array]
+        a = divarray[x]
+        b = divarray[y]
+        if(divarray[y]!= 0 && divarray[x]%divarray[y] == 0){
+          divarray.push(divarray[x]/divarray[y])
+          divarray.splice(x,1)
+          if(x < y){
+            divarray.splice(y-1,1)
+          }
+          else{
+            divarray.splice(y,1)
+          }
+          combinations(divarray,target,level)
+        // console.log(divarray)
+        }
+        else if(divarray[x]!= 0 && divarray[y]%divarray[x] == 0){
+          divarray.push(divarray[y]/divarray[x])
+          divarray.splice(x,1)
+          if(x < y){
+            divarray.splice(y-1,1)
+          }
+          else{
+            divarray.splice(y,1)
+          }
+          combinations(divarray,target,level)
+        }
+      }
+      numTar = 0
+      bigNum = 10000
+      // level = 0
+      // function combinations(array,targety,level){
+      //   if(array.includes(targety) == true){
+      //     numTar = numTar+1
+      //     if(level < bigNum){
+      //       bigNum = level
+      //     }
+      //   }
+      //   else{
+      //     level = level+1
+      //     for(let i = 0;i < array.length;i++){
+      //       for(let z = i+1;z<array.length;z++){
+      //         // console.log(array[i],array[z])
+      //         operations(array,i,z,targety,level)
+      //       }
+      //     }
+      //   }
+      // }
+
+      // function generate(){
+      //   console.log(pls)
+      //   target = Math.floor(Math.random() * 50) + 30;
+      //   c = 0
+      //   while(c < 6){
+      //     b = Math.floor(Math.random() * 18) + 2;
+      //     if(y.includes(b) == false){
+      //       c = c+1
+      //       y.push(b)
+      //     }
+      //   }
+      //   combinations(y,target,0)
+      //   circleOne.textContent = y[0]
+      //   circleTwo.textContent = y[1]
+      //   circleThree.textContent = y[2]
+      //   circleFour.textContent = y[3]
+      //   circleFive.textContent = y[4]
+      //   circleSix.textContent = y[5]
+      //   headingElement.innerHTML = target
+      //   // console.log(bigNum)
+      // }
+
+      // function generateMedium(){
+      //   console.log(pls)
+      //   target = Math.floor(Math.random() * 200) + 100;
+      //   c = 0
+      //   while(c < 6){
+      //     b = Math.floor(Math.random() * 18) + 2;
+      //     if(y.includes(b) == false){
+      //       c = c+1
+      //       y.push(b)
+      //     }
+      //   }
+      //   combinations(y,target,0)
+      //   circleOne.textContent = y[0]
+      //   circleTwo.textContent = y[1]
+      //   circleThree.textContent = y[2]
+      //   circleFour.textContent = y[3]
+      //   circleFive.textContent = y[4]
+      //   circleSix.textContent = y[5]
+      //   headingElement.innerHTML = target
+      //   // console.log(bigNum)
+      // }
+
+      // function generateHard(){
+      //   console.log(pls)
+      //   target = Math.floor(Math.random() * 200) + 300;
+      //   c = 0
+      //   while(c < 6){
+      //     b = Math.floor(Math.random() * 18) + 2;
+      //     if(y.includes(b) == false){
+      //       c = c+1
+      //       y.push(b)
+      //     }
+      //   }
+      //   combinations(y,target,0)
+      //   circleOne.textContent = y[0]
+      //   circleTwo.textContent = y[1]
+      //   circleThree.textContent = y[2]
+      //   circleFour.textContent = y[3]
+      //   circleFive.textContent = y[4]
+      //   circleSix.textContent = y[5]
+      //   headingElement.innerHTML = target
+      //   // console.log(bigNum)
+      // }
+
+      // function generateImpossible(){
+      //   console.log(pls)
+      //   target = Math.floor(Math.random() * 500) + 500;
+      //   c = 0
+      //   while(c < 6){
+      //     b = Math.floor(Math.random() * 18) + 2;
+      //     if(y.includes(b) == false){
+      //       c = c+1
+      //       y.push(b)
+      //     }
+      //   }
+      //   combinations(y,target,0)
+      //   circleOne.textContent = y[0]
+      //   circleTwo.textContent = y[1]
+      //   circleThree.textContent = y[2]
+      //   circleFour.textContent = y[3]
+      //   circleFive.textContent = y[4]
+      //   circleSix.textContent = y[5]
+      //   headingElement.innerHTML = target
+      //   // console.log(bigNum)
+      // }
+
+      // console.log(checker)
+      // if(checker == "Easy"){
+      // while(bigNum != 3){
+      //   generate()
+      // }
+      console.log(bigNum)
+
+      // }
+      // console.log(y)
+      // console.log(target)
+      // console.log(numTar)
+      // console.log(level)
+
+      // const dropdown = document.getElementById("fruitDropdown");
+      //   dropdown.addEventListener("change", function() {
+      //       const selectedFruit = dropdown.value;
+      //       if(selectedFruit == "Easy"){
+      //         while(level != 2){
+      //           generate()
+      //         }
+      //       }
+      //       else if(selectedFruit == "Medium"){
+      //         while(level != 3){
+      //           generate()
+      //         }
+      //       }
+      //       else if(selectedFruit == "Hard"){
+      //         while(level != 4){
+      //           generate()
+      //         }
+      //       }
+      //   });
+
+      // var headingElement = document.getElementById("Target");
+      // headingElement.innerHTML = target
+
+
+      first = -1
+      firstIn = -1
+      second = -2
+      curop = ""
+
+      // y = [1,2,3,4,5,6]
+      // y = [Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2]
+      var circleOne = document.querySelector(".circle");
+      // circleOne.textContent = y[0]
+
+      var circleTwo = document.querySelector(".circleTwo");
+      // circleTwo.textContent = y[1]
+
+      var circleThree = document.querySelector(".circleThree");
+      // circleThree.textContent = y[2]
+
+      var circleFour = document.querySelector(".circleFour");
+      // circleFour.textContent = y[3]
+
+      var circleFive = document.querySelector(".circleFive");
+      // circleFive.textContent = y[4]
+
+      var circleSix = document.querySelector(".circleSix");
+      // circleSix.textContent = y[5]
+
+      // var circleOne = document.querySelector(".circle");
+      // circleOne.textContent = y[0]
+
+      // var circleTwo = document.querySelector(".circleTwo");
+      // circleTwo.textContent = y[1]
+
+      // var circleThree = document.querySelector(".circleThree");
+      // circleThree.textContent = y[2]
+
+      // var circleFour = document.querySelector(".circleFour");
+      // circleFour.textContent = y[3]
+
+      // var circleFive = document.querySelector(".circleFive");
+      // circleFive.textContent = y[4]
+
+      // var circleSix = document.querySelector(".circleSix");
+      // circleSix.textContent = y[5]
+
+      var headingElement = document.getElementById("Target");
+      // headingElement.innerHTML = target
+
+
+      var Add = document.querySelector(".circleAdd");
+      var Sub = document.querySelector(".circleSubtract");
+      var Mul = document.querySelector(".circleMultiply");
+      var Div = document.querySelector(".circleDivision");
+
+      clickAdd = false
+      function calcAdd(){
+        if(clickAdd == false){
+          if(first != -1){
+            curop = "+"
+            actions = actions + "➕"
+            Add.style.backgroundColor = "#a4915e";
+
+            Sub.style.backgroundColor = "black";
+            Mul.style.backgroundColor = "black";
+            Div.style.backgroundColor = "black";
+            clickSub = false;
+            clickMul = false;
+            clickDiv = false;
+            clickAdd = true
+          }
+        }
+        else{
+          clickAdd = false
+          curop = ""
+          actions = actions.slice(0, actions.length - 1)
+          Add.style.backgroundColor = "black";
+        }
+      }
+
+      clickSub = false
+      function calcSub(){
+        if(clickSub == false){
+          if(first != -1){
+            curop = "-"
+            actions = actions + "➖"
+            Sub.style.backgroundColor = "#a4915e";
+
+            Add.style.backgroundColor = "black";
+            Mul.style.backgroundColor = "black";
+            Div.style.backgroundColor = "black";
+            clickAdd = false;
+            clickMul = false;
+            clickDiv = false;
+            clickSub = true
+          }
+        }
+        else{
+          clickSub = false
+          curop = ""
+          actions = actions.slice(0, actions.length - 1)
+          Sub.style.backgroundColor = "black";
+        }
+      }
+
+      clickMul = false
+      function calcMul(){
+        if(clickMul == false){
+          if(first != -1){
+            curop = "*"
+            actions = actions + "✖"
+            Mul.style.backgroundColor = "#a4915e";
+
+            Add.style.backgroundColor = "black";
+            Sub.style.backgroundColor = "black";
+            Div.style.backgroundColor = "black";
+            clickSub = false;
+            clickAdd = false;
+            clickDiv = false;
+            clickMul = true
+          }
+        }
+        else{
+          clickMul = false
+          curop = ""
+          actions = actions.slice(0, actions.length - 1)
+          Mul.style.backgroundColor = "black";
+        }
+      }
+
+      clickDiv = false
+      function calcDiv(){
+        if(clickDiv == false){
+          if(first != -1){
+            curop = "/"
+            actions = actions+"➗"
+            Div.style.backgroundColor = "#a4915e";
+
+            Add.style.backgroundColor = "black";
+            Sub.style.backgroundColor = "black";
+            Mul.style.backgroundColor = "black";
+            clickSub = false;
+            clickAdd = false;
+            clickMul = false;
+            clickDiv = true
+          }
+        }
+        else{
+          clickDiv = false
+          curop = ""
+          actions = actions.slice(0, actions.length - 1)
+          Div.style.backgroundColor = "black";
+        }
+      }
+
+      validone = true
+      clickedOne = false
+      function calcOne(){
+        if(onedel == false){
+          if(clickedOne == false){
+            if(first == -1){
+              circleOne.style.backgroundColor = "#a4915e";
+              clickedOne = true
+              first = y[0]
+              firstIn = 0
+            }
+            else if(curop != ""){
+              circleOne.style.backgroundColor = "#a4915e";
+              clickedOne = true
+              second = y[0]
+              if(curop == "+"){
+                y[0] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[0] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[0] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validone = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[0] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validone = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validone == true){
+                setTimeout(function() {
+                  circleOne.style.backgroundColor = "black";
+                  circleOne.textContent = y[0]
+                  string = firstIn + "|" + first + "/" + 0 + "|" + second
+                  undos.push(string)
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedOne = false
+                  if(y[0] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[0]
+              firstIn = 0
+              circleOne.style.backgroundColor = "#a4915e";
+              clickedOne = true
+              clickedTwo = false
+              clickedThree = false
+              clickedFour = false
+              clickedFive = false
+              clickedSix = false
+              circleTwo.style.backgroundColor = "black";
+              circleThree.style.backgroundColor = "black";
+              circleFour.style.backgroundColor = "black";
+              circleFive.style.backgroundColor = "black";
+              circleSix.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleOne.style.backgroundColor = "black";
+            clickedOne = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validone = true;
+        }
+      }
+
+      validTwo = true
+      clickedTwo = false
+      function calcTwo(){
+        if(twodel == false){
+          if(clickedTwo == false){
+            if(first == -1){
+              circleTwo.style.backgroundColor = "#a4915e";
+              clickedTwo = true
+              first = y[1]
+              firstIn = 1
+            }
+            else if(curop != ""){
+              circleTwo.style.backgroundColor = "#a4915e";
+              clickedTwo = true
+              second = y[1]
+              if(curop == "+"){
+                y[1] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[1] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[1] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validone = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[1] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validTwo = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validTwo == true){
+                string = firstIn + "|" + first + "/" + 1 + "|" + second
+                undos.push(string)
+                setTimeout(function() {
+                  circleTwo.style.backgroundColor = "black";
+                  circleTwo.textContent = y[1]
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedTwo = false
+                  if(y[1] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[1]
+              firstIn = 1
+              circleTwo.style.backgroundColor = "#a4915e";
+              clickedTwo = true
+              clickedOne = false
+              clickedThree = false
+              clickedFour = false
+              clickedFive = false
+              clickedSix = false
+              circleOne.style.backgroundColor = "black";
+              circleThree.style.backgroundColor = "black";
+              circleFour.style.backgroundColor = "black";
+              circleFive.style.backgroundColor = "black";
+              circleSix.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleTwo.style.backgroundColor = "black";
+            clickedTwo = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validTwo = true
+        }
+      }
+
+      validThree = true;
+      clickedThree = false
+      function calcThree(){
+        if(threedel == false){
+          if(clickedThree == false){
+            if(first == -1){
+            circleThree.style.backgroundColor = "#a4915e";
+            clickedThree = true
+            first = y[2]
+            firstIn = 2
+            }
+            else if(curop != ""){
+              circleThree.style.backgroundColor = "#a4915e";
+              clickedThree = true
+              second = y[2]
+              if(curop == "+"){
+                y[2] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[2] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[2] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validTwo = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[2] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validThree = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validThree == true){
+                string = firstIn + "|" + first + "/" + 2 + "|" + second
+                undos.push(string)
+                setTimeout(function() {
+                  circleThree.style.backgroundColor = "black";
+                  circleThree.textContent = y[2]
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedThree = false
+                  if(y[2] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[2]
+              firstIn = 2
+              circleThree.style.backgroundColor = "#a4915e";
+              clickedThree = true
+              clickedTwo = false
+              clickedOne = false
+              clickedFour = false
+              clickedFive = false
+              clickedSix = false
+              circleTwo.style.backgroundColor = "black";
+              circleOne.style.backgroundColor = "black";
+              circleFour.style.backgroundColor = "black";
+              circleFive.style.backgroundColor = "black";
+              circleSix.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleThree.style.backgroundColor = "black";
+            clickedThree = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validThree = true
+        }
+      }
+
+      validFour = true
+      clickedFour = false
+      function calcFour(){
+        if(fourdel == false){
+          if(clickedFour == false){
+            if(first == -1){
+              circleFour.style.backgroundColor = "#a4915e";
+              clickedFour = true
+              first = y[3]
+              firstIn = 3
+            }
+            else if(curop != ""){
+              circleFour.style.backgroundColor = "#a4915e";
+              clickedFour = true
+              second = y[3]
+              if(curop == "+"){
+                y[3] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[3] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[3] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validFour = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[3] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validFour = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validFour == true){
+                string = firstIn + "|" + first + "/" + 3 + "|" + second
+                undos.push(string)
+                setTimeout(function() {
+                  circleFour.style.backgroundColor = "black";
+                  circleFour.textContent = y[3]
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedFour = false
+                  if(y[3] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[3]
+              firstIn = 3
+              circleFour.style.backgroundColor = "#a4915e";
+              clickedFour = true
+              clickedTwo = false
+              clickedThree = false
+              clickedOne = false
+              clickedFive = false
+              clickedSix = false
+              circleTwo.style.backgroundColor = "black";
+              circleThree.style.backgroundColor = "black";
+              circleOne.style.backgroundColor = "black";
+              circleFive.style.backgroundColor = "black";
+              circleSix.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleFour.style.backgroundColor = "black";
+            clickedFour = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validFour = true
+        }
+      }
+
+
+      validSix = true
+      clickedSix = false
+      function calcSix(){
+        if(sixdel == false){
+          if(clickedSix == false){
+            if(first == -1){
+              circleSix.style.backgroundColor = "#a4915e";
+              clickedSix = true
+              first = y[5]
+              firstIn = 5
+            }
+            else if(curop != ""){
+              circleSix.style.backgroundColor = "#a4915e";
+              clickedSix = true
+              second = y[5]
+              if(curop == "+"){
+                y[5] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[5] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[5] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validSix = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[5] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validSix = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validSix == true){
+                string = firstIn + "|" + first + "/" + 5 + "|" + second
+                undos.push(string)
+                setTimeout(function() {
+                  circleSix.style.backgroundColor = "black";
+                  circleSix.textContent = y[5]
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedSix = false
+                  if(y[5] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[5]
+              firstIn = 5
+              circleSix.style.backgroundColor = "#a4915e";
+              clickedSix = true
+              clickedTwo = false
+              clickedThree = false
+              clickedFour = false
+              clickedOne = false
+              clickedFive = false
+              circleTwo.style.backgroundColor = "black";
+              circleThree.style.backgroundColor = "black";
+              circleFour.style.backgroundColor = "black";
+              circleOne.style.backgroundColor = "black";
+              circleFive.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleSix.style.backgroundColor = "black";
+            clickedSix = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validSix = true
+        }
+      }
+
+
+      clickedFive = false
+      validFive = true
+      function calcFive(){
+        if(fivedel == false){
+          if(clickedFive == false){
+            if(first == -1){
+              circleFive.style.backgroundColor = "#a4915e";
+              clickedFive = true
+              first = y[4]
+              firstIn = 4
+            }
+            else if(curop != ""){
+              circleFive.style.backgroundColor = "#a4915e";
+              clickedFive = true
+              second = y[4]
+              if(curop == "+"){
+                y[4] = first+second
+                clickAdd = false
+                Add.style.backgroundColor = "black"
+              }
+              else if(curop == "*"){
+                y[4] = first*second
+                clickMul = false
+                Mul.style.backgroundColor = "black"
+              }
+              else if(curop == "-"){
+                if(0 < first - second ){
+                  y[4] = first-second
+                  clickSub = false
+                  Sub.style.backgroundColor = "black"
+                }
+                else{
+                  validFive = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              else if(curop == "/"){
+                if(first%second == 0){
+                  y[4] = first/second
+                  clickDiv = false
+                  Div.style.backgroundColor = "black"
+                }
+                else{
+                  validFive = false
+                  clickedOne = false
+                  clickedTwo = false
+                  clickedThree = false
+                  clickedFour = false
+                  clickedFive = false
+                  clickedSix = false
+                  circleOne.style.backgroundColor = "black";
+                  circleTwo.style.backgroundColor = "black";
+                  circleThree.style.backgroundColor = "black";
+                  circleFour.style.backgroundColor = "black";
+                  circleFive.style.backgroundColor = "black";
+                  circleSix.style.backgroundColor = "black";
+
+                  clickMul = false
+                  clickAdd = false
+                  clickDiv = false
+                  clickSub = false
+                  Add.style.backgroundColor = "black";
+                  Sub.style.backgroundColor = "black";
+                  Mul.style.backgroundColor = "black";
+                  Div.style.backgroundColor = "black";
+                  first = -1
+                  second = -2
+                  firstIn = -1
+                }
+              }
+              if(validFive == true){
+                string = firstIn + "|" + first + "/" + 4 + "|" + second
+                undos.push(string)
+                setTimeout(function() {
+                  circleFive.style.backgroundColor = "black";
+                  circleFive.textContent = y[4]
+                  first = -1
+                  second = -2
+                  if(firstIn == 0){
+                    // circleOne.remove();
+                    circleOne.style.backgroundColor = "black";
+                    circleOne.style.color = "black";
+                    circleOne.style.border = "calc(0.005 * 100vw) solid black";
+                    onedel = true
+                  }
+                  else if(firstIn == 1){
+                    // circleTwo.remove();
+                    circleTwo.style.backgroundColor = "black";
+                    circleTwo.style.color = "black";
+                    circleTwo.style.border = "calc(0.005 * 100vw) solid black";
+                    twodel = true
+                  }
+                  else if(firstIn == 2){
+                    // circleThree.remove();
+                    circleThree.style.backgroundColor = "black";
+                    circleThree.style.color = "black";
+                    circleThree.style.border = "calc(0.005 * 100vw) solid black";
+                    threedel = true
+                  }
+                  else if(firstIn == 3){
+                    // circleFour.remove();
+                    circleFour.style.backgroundColor = "black";
+                    circleFour.style.color = "black";
+                    circleFour.style.border = "calc(0.005 * 100vw) solid black";
+                    fourdel = true
+                  }
+                  else if(firstIn == 4){
+                    // circleFive.remove();
+                    circleFive.style.backgroundColor = "black";
+                    circleFive.style.color = "black";
+                    circleFive.style.border = "calc(0.005 * 100vw) solid black";
+                    fivedel = true
+                  }
+                  else if(firstIn == 5){
+                    // circleSix.remove();
+                    circleSix.style.backgroundColor = "black";
+                    circleSix.style.color = "black";
+                    circleSix.style.border = "calc(0.005 * 100vw) solid black";
+                    sixdel = true
+                  }
+                  firstIn = -1
+                  clickedFive = false
+                  if(y[4] == target){
+                    if(diff < 3){
+                        openPopup()
+                    }
+                    else{
+                        openWinPopup()
+                    }
+                  }
+                }, 250);
+              }
+            }
+            else{
+              first = y[4]
+              firstIn = 4
+              circleFive.style.backgroundColor = "#a4915e";
+              clickedFive = true
+              clickedTwo = false
+              clickedThree = false
+              clickedOne = false
+              clickedFive = false
+              clickedSix = false
+              circleTwo.style.backgroundColor = "black";
+              circleThree.style.backgroundColor = "black";
+              circleOne.style.backgroundColor = "black";
+              circleFour.style.backgroundColor = "black";
+              circleSix.style.backgroundColor = "black";
+            }
+          }
+          else{
+            circleFive.style.backgroundColor = "black";
+            clickedFive = false
+            if(second != -2){
+              second = -2
+            }
+            else{
+              first = -1
+            }
+          }
+          validFive = true
+        }
+      }
+
+    // Call the function when the page loads
+    window.onload = displayDaysAway;
+  </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Date Calculator</title>
+  <style>
+        /* Optional CSS to style the circle */
+        .circle {
+            position: absolute; 
+            font-family: sans-serif;
+            top: 28%;
+            left: 29%;
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border: calc(0.008 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+            font-size: 4vw;
+        }
+    </style>
+</head>
+<body>
+  <h1>Days Away from July 29, 2023</h1>
+  <p id="daysAway"></p>
+  <div class="circle"></div>
+  <script>
+    daysAway = 5
+    // Function to calculate the days between two dates
+    function calculateDaysAway(targetDate) {
+      const currentDate = new Date();
+      const targetDateObj = new Date(targetDate);
+      const timeDifference = targetDateObj - currentDate;
+      const daysAway = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+      console.log(currentDate)
+      console.log(targetDateObj)
+      console.log(timeDifference)
+      console.log(daysAway)
+      return daysAway;
+    }
+
+    // Function to display the result on the webpage
+    function displayDaysAway() {
+      const targetDate = '2023-07-29';
+      daysAway = calculateDaysAway(targetDate)+1;
+      
+      // Get the current date and time in EST
+      const currentDateTimeEST = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+      
+      document.getElementById('daysAway').innerText = `The current date and time in EST is ${currentDateTimeEST}. 
+        There are ${daysAway} days away from July 29, 2023 in EST.`;
+        circleOne.textContent = y[daysAway]
+    }
+    y = [1,2,3,4,5]
+    var circleOne = document.querySelector(".circle");
+    // circleOne.textContent = y[daysAway]
+    // Call the function when the page loads
+    window.onload = function() {
+      displayDaysAway();
+
+      // Refresh the page at midnight in EST (every day)
+      setInterval(function() {
+        const currentDate = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+        const currentTime = new Date(currentDate).toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+
+        if (currentTime === '12:00:00 AM') {
+          location.reload();
+        }
+      }, 1000); // Check every second
+    };
+  </script>
+</body>
+</html>
+ -->
