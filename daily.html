@@ -717,21 +717,27 @@
     function Next(){
         diff = diff+1
         circleOne.textContent = x[diff][1]
+        y[0] = x[diff][1]
 
       // var circleTwo = document.querySelector(".circleTwo");
       circleTwo.textContent = x[diff][2]
+      y[1] = x[diff][2]
 
       // var circleThree = document.querySelector(".circleThree");
       circleThree.textContent = x[diff][3]
+      y[2] = x[diff][3]
 
       // var circleFour = document.querySelector(".circleFour");
       circleFour.textContent = x[diff][4]
+      y[3] = x[diff][4]
 
       // var circleFive = document.querySelector(".circleFive");
       circleFive.textContent = x[diff][5]
+      y[4] = x[diff][5]
 
       // var circleSix = document.querySelector(".circleSix");
       circleSix.textContent = x[diff][6]
+      y[5] = x[diff][6]
 
      // var headingElement = document.getElementById("Target");
       headingElement.innerHTML = x[diff][0]
@@ -779,7 +785,7 @@
       second = -2
       firstIn = -1
       curop = ""
-
+      undos = []
 
 
       var overlay = document.querySelector(".overlay");
