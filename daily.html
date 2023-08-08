@@ -334,6 +334,9 @@
 
         }
         @media(max-width: 1170px){
+          .container{
+            padding-top: 5vh;
+          }
           .circle{
             width : 25vw;
             height : 25vw;
@@ -409,7 +412,7 @@
   <div class="overlayagain">
         <div class="bigpopup">
             <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
-            <button onclick="copyToClipboard(total)" style="border-radius: 18px;">Share</button>
+            <button onclick="copyToClipboard(total)" style="border-radius: 2vw;">Share</button>
         </div>
   </div>
   <div class="overlayThree">
@@ -418,7 +421,7 @@
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Invalid calculations will not be counted(ex. calculations that results in fractions or negative numbers)</h3>
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Advance through the 4 levels given daily to reach the end and share your results</h3>
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Use the undo button if you wish to redo an operation and the give up button to skip the level you are on</h3>
-            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw">Close</button>
+            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw;border-radius: 2vw;">Close</button>
         </div>
     </div>
     <div class="Dayoverlay">
@@ -428,7 +431,6 @@
             <button onclick = "bye()" style = "border-radius: 2vw;">Unlimited Mode</button>
         </div>
     </div> 
-  </div>
   <script>
       onedel = false
       twodel = false
@@ -663,7 +665,7 @@
         // console.log(currentDateTimeEST)
       if(storedValue == currentDateTimeEST){
         console.log("YOU MAY NOT ENTER UNDER ANY CIRCUMSTANCES")
-        openDayPopup()
+        // openDayPopup()
       }
     } else {
       localStorage.setItem("myVariable", "Hello, World!");
@@ -714,7 +716,7 @@
       }, msUntilMidnight);
     }
 
-    z = [[[54,22, 11, 9, 12, 19, 8],[243,25, 12, 5, 7, 4, 18],[276,20, 9, 18, 14, 16, 24],[982,14, 6, 21, 22, 8, 5]],[[60,3, 9, 6, 7, 2, 11],[260,5, 12, 9, 4, 6, 8],[447,5, 19, 2, 16, 6, 15],[940,20, 3, 11, 5, 4, 8]],[[75,5, 18, 13, 21, 11, 12],[187,18, 13, 22, 8, 11, 9],[472,20, 17, 6, 13, 14, 3],[70,12, 4, 9, 14, 23, 25]],[[83,14, 22, 18, 6, 15, 4],[174,3, 13, 7, 12, 23, 4],[435,3, 24, 6, 19, 7, 25],[740,6, 19, 21, 9, 11, 4]],[[82,10, 2, 23, 12, 5, 11],[257,17, 19, 14, 21, 13, 9],[492,17, 7, 10, 20, 15, 23],[715,15, 5, 22, 10, 2, 8]],[[97,18, 20, 2, 15, 13, 11],[227,22, 4, 13, 25, 11, 12],[406,24, 20, 25, 23, 13, 5],[779,17, 3, 4, 21, 24, 12]],[[69,23, 13, 17, 7, 2, 10],[298,3, 7, 23, 8, 19, 14],[475,20, 19, 7, 14, 2, 25],[658,7, 18, 17, 11, 23, 2]]]
+    z = [[[54,22, 11, 9, 12, 19, 8],[243,25, 12, 5, 7, 4, 18],[276,20, 9, 18, 14, 16, 24],[982,14, 6, 21, 22, 8, 5]],[[60,3, 9, 6, 7, 2, 11],[260,5, 12, 9, 4, 6, 8],[447,5, 19, 2, 16, 6, 15],[940,20, 3, 11, 5, 4, 8]],[[75,5, 18, 13, 21, 11, 12],[187,18, 13, 22, 8, 11, 9],[472,20, 17, 6, 13, 14, 3],[70,12, 4, 9, 14, 23, 25]],[[83,14, 22, 18, 6, 15, 4],[174,3, 13, 7, 12, 23, 4],[435,3, 24, 6, 19, 7, 25],[740,6, 19, 21, 9, 11, 4]],[[82,10, 2, 23, 12, 5, 11],[257,17, 19, 14, 21, 13, 9],[492,17, 7, 10, 20, 15, 23],[715,15, 5, 22, 10, 2, 8]],[[97,18, 20, 2, 15, 13, 11],[227,22, 4, 13, 25, 11, 12],[406,24, 20, 25, 23, 13, 5],[779,17, 3, 4, 21, 24, 12]],[[69,23, 13, 17, 7, 2, 10],[298,3, 7, 23, 8, 19, 14],[475,20, 19, 7, 14, 2, 25],[658,7, 18, 17, 11, 23, 2]],[[92,20, 25, 17, 7, 13, 4],[225,7, 25, 22, 11, 24, 21],[467,9, 8, 4, 15, 7, 5],[685,6, 23, 5, 15, 8, 2]],[[74,7, 8, 19, 21, 15, 16],[268,20, 6, 13, 25, 16, 15],[442,21, 22, 24, 11, 4, 6],[751,19, 24, 14, 22, 6, 21]]]
     // var circleOne = document.querySelector(".circle");
 
     onedel = false
