@@ -1,218 +1,148 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-    <title>Digits Unlimited</title>
     <meta name="description" content="An unlimited variation of the popular NYT game, digits">
     <meta name="keywords" content="wordle game, nyt digits, nyt digits unlimited">
-    <h2  style ="color: white;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-right:0;font-size:3.5vh">Digits</h2><h2  style ="color: #a4915e;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-left:0;font-size:3.5vh">UNLIMITED</h2>
-    <style>
-        /* Optional CSS to style the circle */
+    <div class = "button-container">
+      <h2  class="help">DIGITS</h2><h2 class="help" style="color:#a4915e;">UNLIMITED</h2>
+      <button class="Info" onclick = "Information()">?</button>
+      <button class="pill-button" onclick = "bye()">Daily Mode</button>
+    </div>
+  <title>Digits Unlimited</title>
+  <style>
+      body {
+          /*display: flex;*/
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #000000;
+        }
+        .help {
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            display: inline;
+            padding:0;
+            margin:0;
+            font-size:3vw;
+          }
+        .container {
+          padding-top: 5vh;
+          display: flex;
+          flex-direction: column; /* Arrange content in a column */
+          align-items: center;
+        }
+
+        .button-container {
+          display: flex;
+        }
+
+        .pill-button {
+              position: absolute;
+            /*top : 1%;
+            left : 85%;*/
+            background-color: #a4915e;
+            color: white;
+            font-size: 1vw;
+            padding: 1.4vw;
+            border: none;
+            border-radius: 5vw;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+            margin-left : 86%;
+            margin-top:  0.5%;
+          }
+
+        .Info{
+          position: absolute; 
+            /*top: 1%; 
+            left: 95%;*/
+            width: 0.01vw;
+            height: 0.01vw;
+            border-radius: 50%;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            margin-top:  0.5%;
+             margin-left: 95%;
+            font-family: sans-serif;
+        }
+
+        .circle-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 3vw;
+          max-width: 800px;
+          padding: 20px;
+        }
+
         .circle {
-            position: absolute; 
-            font-family: sans-serif;
-            top: 28%;
-            left: 29%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
+          border-radius: 50%;
+          border: none;
             outline: none;
             border: calc(0.008 * 100vw) solid #a4915e;
             cursor: pointer;
             color: white;
-            font-size: 4vw;
-        }
-        .circleTwo {
-            position: absolute; 
-            top: 28%; 
-            left: 45%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleThree {
-            position: absolute; 
-            top: 28%; 
-            left: 61%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleFour {
-            position: absolute; 
-            top: 55%; 
-            left: 29%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleFive {
-            position: absolute; 
-            top: 55%; 
-            left: 45%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleSix {
-            position: absolute; 
-            top: 55%; 
-            left: 61%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+          background-color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 10vw;
+          height: 10vw;
+          border-radius: 50%;
+          font-size: 4vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
         }
 
-        .circleAdd {
-            position: absolute; 
-            top: 80%; 
-            left: 62.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+        /*.circle:hover {
+          background-color: #232222;
+        }*/
+
+        .circle-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
         }
 
-        .circleSubtract {
-            position: absolute; 
-            top: 80%; 
-            left: 52.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
+        .small-circle {
+          border: none;
             outline: none;
             border: calc(0.005 * 100vw) solid #a4915e;
             cursor: pointer;
             color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleMultiply {
-            position: absolute; 
-            top: 80%; 
-            left: 42.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+          background-color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 7vw;
+          height: 7vw;
+          border-radius: 50%;
+          font-size: 4vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
+          margin: 0 0.5vw; 
         }
 
-        .circleDivision {
-            position: absolute; 
-            top: 80%; 
-            left: 32.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-       .popup {
+        /*.small-circle:hover {
+          background-color: #141414;
+        }*/
+
+        .popup {
             background-color: #000000;
             padding: 5%;
+            border-radius: 5vw;
             box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
             border: 1vw solid #a4915e;
             display: flex; /* Use Flexbox to center content */
@@ -223,6 +153,7 @@
         .bigpopup {
             background-color: #000000;
             padding: 8%;
+            border-radius: 5vw;
             box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
             border: 1vw solid #a4915e;
             display: flex; /* Use Flexbox to center content */
@@ -230,83 +161,6 @@
             align-items: center; /* Center horizontally */
             justify-content: center;
         }
-        .popupThree {
-            background-color: #000000;
-            padding: 4%;
-            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
-            border: 1vw solid #a4915e;
-            display: flex; /* Use Flexbox to center content */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center horizontally */
-            justify-content: center;
-        }
-        .circleTest {
-            position: absolute; 
-            top: 95%; 
-            left: 42.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
-        }
-        .Undo {
-            position: absolute; 
-            top: 95%; 
-            left: 52.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
-        }
-
-        h1 {
-            color: white;
-            font-family: sans-serif;
-            font-size: 8vw;
-            text-align: center;
-            padding :0;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        button {
-
-          text-align: center;
-          border-radius: 3%;
-          font-family: sans-serif;
-          font-size:  2vw;
-          color: white;
-          background-color: black;
-          padding:  2vw;
-          border: 0.3vw solid #a4915e;
-        }
-/*        h2 {
-            color: white;
-            font-family: sans-serif;
-            font-size: 8vw;
-            text-align: center;
-        }*/
         .overlay {
             position: fixed;
             top: 0;
@@ -341,6 +195,37 @@
             justify-content: center;
             align-items: center;
         }
+        .popupThree {
+            background-color: #000000;
+            border-radius: 5vw;
+            padding: 4%;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
+        h1 {
+            color: white;
+            font-family: sans-serif;
+            font-size: 8vw;
+            text-align: center;
+            padding :0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        button {
+
+          text-align: center;
+          border-radius: 3%;
+          font-family: sans-serif;
+          font-size:  2vw;
+          color: white;
+          background-color: black;
+          padding:  2vw;
+          border: 0.3vw solid #a4915e;
+        }
         #DifficultyLevel {
           width: 10lw;
           height: 5vw;
@@ -358,225 +243,103 @@
             color: white;
 
         }
-        .Info{
-          position: absolute; 
-            top: 1%; 
-            left: 95%;
-            width: 2.3vw;
-            height: 2.3vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
-        }
-
-        .pill-button {
-              position: absolute;
-            top : 1%;
-            left : 85%;
-            background-color: #a4915e;
-            color: white;
-            font-size: 1vw;
-            padding: 1vw;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
-          }
-
         @media(max-width: 1170px){
-          .pill-button {
-              position: absolute;
-            top : 1%;
-            left : 65%;
-            background-color: #a4915e;
-            color: white;
-            font-size: 2vh;
-            padding: 1vh;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          .circle{
+            width : 25vw;
+            height : 25vw;
+            font-size : 8vw
+          }
+          .circle-grid{
+            padding : 2vh;
+          }
+          .small-circle{
+            width :15vw;
+            height :15vw;
+            font-size: 8vw;
+          }
+          .small-circle-two{
+            width :15vw;
+            height :15vw;
+            font-size: 3.5vw;
           }
           .Info{
-          position: absolute; 
-            top: 1%; 
-            left: 90%;
-            width: 3.8vh;
-            height: 3.8vh;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
-          .circle {
-            top: 28%;
-            left: 10%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
+            width: 6vw;
+            height: 6vw;
+            font-size : 4vw;
+            margin-left : 92%;
           }
-          .circleTwo {
-            top: 28%;
-            left: 40%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
+          .pill-button{
+            font-size : 2.8vw;
+            margin-left: 73%;
           }
-          .circleThree {
-            top: 28%;
-            left: 70%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleFour {
-            top: 48%;
-            left: 10%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleFive {
-            top: 48%;
-            left: 40%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleSix {
-            top: 48%;
-            left: 70%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleSubtract {
-            position: absolute; 
-            top: 67%; 
-            left: 51.5%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleAdd {
-            position: absolute; 
-            top: 67%; 
-            left: 70%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleMultiply {
-            position: absolute; 
-            top: 67%; 
-            left: 33.5%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleDivision {
-            position: absolute; 
-            top: 67%; 
-            left: 15%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .Undo {
-            position: absolute; 
-            top: 80%; 
-            left: 51.5%;
-            width: 7vh;
-            height: 7vh;
-            border-radius: 50%;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
-        .circleTest {
-            position: absolute; 
-            top: 80%; 
-            left: 33.5%;
-            width: 7vh;
-            height: 7vh;
-            border-radius: 50%;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
           h1{
-            margin-top: 5vh;
-            font-size: 10vh;
+            font-size : 15vw;
+          }
+          .help{
+            font-size : 6vw
           }
         }
 
-    </style>
+  </style>
 </head>
-<body bgcolor="#000000">
+<body>
+  <div class="container">
+    <!-- <div class="button-container">
+      <button class="Info" onclick = "Information()">?</button>
+      <button class="pill-button" onclick = "bye()">Daily Mode</button>
+    </div> -->
+    <!-- <div class="button-container">
+      <h2 style="color:white;font-family:sans-serif;left: ;top: 0;">Ratio</h2><h2 style="color:#a4915e;top: 0;;font-family:sans-serif">Bozo</h2>
+    </div> -->
     <h1 id="Target"></h1>
-    <div class="circle" onclick="calcOne()"></div>
-    <div class="circleTwo" onclick="calcTwo()"></div>
-    <div class="circleThree" onclick="calcThree()"></div>
-    <div class="circleFour" onclick="calcFour()"></div>
-    <div class="circleFive" onclick="calcFive()"></div>
-    <div class="circleSix" onclick="calcSix()"></div>
-    <div class="circleAdd" onclick="calcAdd()">+</div>
-    <div class="circleSubtract" onclick="calcSub()">-</div>
-    <div class="circleMultiply" onclick="calcMul()">x</div>
-    <div class="circleDivision" onclick="calcDiv()">÷</div>
-    <div class="Info" onclick = "Information()">?</div>
-    <div class="circleTest" onclick="closePopup()">Quit</div>
-    <div class="Undo" onclick = "undo()">Undo</div>
-    <button class="pill-button" onclick = "bye()">Daily Mode</button>
-    <div class="overlay">
-        <div class="popup">
-            <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
-            <button onclick="closePopup()">Play Again</button>
-        </div>
+    <div class="circle-grid">
+      <div class="circle" id="circle" onclick="calcOne()">1</div>
+      <div class="circle" id="circleTwo" onclick="calcTwo()">2</div>
+      <div class="circle" id="circleThree" onclick="calcThree()">3</div>
+      <div class="circle" id="circleFour" onclick="calcFour()">4</div>
+      <div class="circle" id="circleFive" onclick="calcFive()">5</div>
+      <div class="circle" id="circleSix" onclick="calcSix()">6</div>
     </div>
-
-    <div class="overlayThree">
+    <div class="circle-row">
+      <div class="small-circle" id = "circleDivision" onclick="calcDiv()">÷</div>
+      <div class="small-circle" id = "circleMultiply" onclick="calcMul()">x</div>
+      <div class="small-circle" id = "circleSubtract" onclick="calcSub()">-</div>
+      <div class="small-circle" id = "circleAdd" onclick="calcAdd()">+</div>
+    </div>
+    <div class="circle-row">
+        <div class="small-circle" id = "Undo" style = "font-size:2vw;background-color: #a4915e;" onclick = "closePopup()">Quit</div>
+        <div class="small-circle" id = "Undo" style = "font-size:2vw;background-color: #a4915e;" onclick = "undo()">Undo</div>
+      </div>
+  </div>
+  <div class="overlayagain">
+    <div class="bigpopup">
+        <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:3vw">Welcome to Digits Unlimited!</h2>
+        <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:2vw">Choose Your Difficulty Level</h2>
+        <select id="DifficultyLevel" onchange="openPopupTwo()" style="border-radius: 2vw;">
+          <option value="Select">Select</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+          <option value="Impossible">Impossible</option>
+        </select>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="popup">
+        <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
+        <button onclick="closePopup()" style = "border-radius: 2vw;">Play Again</button>
+    </div>
+  </div>
+  <div class="overlayThree">
         <div class="popupThree">
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Perform operations on the 6 given numbers in order to reach the target number</h3>
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Invalid calculations will not be counted(ex. calculations that results in fractions or negative numbers)</h3>
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Use the undo button if you wish to redo an operation and the quit button to generate a new puzzle</h3>
             <!-- <p>Contact us <a href="sub.html">here</a>.</p> -->
-            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw">Close</button>
+            <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw;border-radius: 2vw;">Close</button>
         </div>
     </div>
-
-    <div class="overlayagain">
-        <div class="bigpopup">
-            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:3vw">Welcome to Digits Unlimited!</h2>
-            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:2vw">Choose Your Difficulty Level</h2>
-            <select id="DifficultyLevel" onchange="openPopupTwo()">
-              <option value="Select">Select</option>
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-              <option value="Impossible">Impossible</option>
-            </select>
-        </div>
-    </div>
-
-    <script>
+  <script>
       onedel = false
       twodel = false
       threedel = false
@@ -656,18 +419,27 @@
               y[5] = Number(lasty[1])
             }
           }
+
           clickedOne = false
           clickedTwo = false
           clickedThree = false
           clickedFour = false
           clickedFive = false
           clickedSix = false
+          clickAdd = false
+          clickSub = false
+          clickMul = false
+          clickDiv = false
           circleOne.style.backgroundColor = "black";
           circleTwo.style.backgroundColor = "black";
           circleThree.style.backgroundColor = "black";
           circleFour.style.backgroundColor = "black";
           circleFive.style.backgroundColor = "black";
           circleSix.style.backgroundColor = "black";
+          Add.style.backgroundColor = "black";
+          Sub.style.backgroundColor = "black";
+          Mul.style.backgroundColor = "black";
+          Div.style.backgroundColor = "black";
           first = -1
           second = -2
           firstIn = -1
@@ -901,95 +673,37 @@
         headingElement.innerHTML = target
         // console.log(bigNum)
       }
-
-      // console.log(checker)
-      // if(checker == "Easy"){
-      // while(bigNum != 3){
-      //   generate()
-      // }
-      console.log(bigNum)
-
-      // }
-      // console.log(y)
-      // console.log(target)
-      // console.log(numTar)
-      // console.log(level)
-
-      // const dropdown = document.getElementById("fruitDropdown");
-      //   dropdown.addEventListener("change", function() {
-      //       const selectedFruit = dropdown.value;
-      //       if(selectedFruit == "Easy"){
-      //         while(level != 2){
-      //           generate()
-      //         }
-      //       }
-      //       else if(selectedFruit == "Medium"){
-      //         while(level != 3){
-      //           generate()
-      //         }
-      //       }
-      //       else if(selectedFruit == "Hard"){
-      //         while(level != 4){
-      //           generate()
-      //         }
-      //       }
-      //   });
-
-      // var headingElement = document.getElementById("Target");
-      // headingElement.innerHTML = target
-
-
       first = -1
       firstIn = -1
       second = -2
       curop = ""
 
-      // y = [1,2,3,4,5,6]
-      // y = [Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2]
-      // var circleOne = document.querySelector(".circle");
-      // circleOne.textContent = y[0]
-
-      // var circleTwo = document.querySelector(".circleTwo");
-      // circleTwo.textContent = y[1]
-
-      // var circleThree = document.querySelector(".circleThree");
-      // circleThree.textContent = y[2]
-
-      // var circleFour = document.querySelector(".circleFour");
-      // circleFour.textContent = y[3]
-
-      // var circleFive = document.querySelector(".circleFive");
-      // circleFive.textContent = y[4]
-
-      // var circleSix = document.querySelector(".circleSix");
-      // circleSix.textContent = y[5]
-
-      var circleOne = document.querySelector(".circle");
+      var circleOne = document.getElementById("circle");
       circleOne.textContent = y[0]
 
-      var circleTwo = document.querySelector(".circleTwo");
+      var circleTwo = document.getElementById("circleTwo");
       circleTwo.textContent = y[1]
 
-      var circleThree = document.querySelector(".circleThree");
+      var circleThree = document.getElementById("circleThree");
       circleThree.textContent = y[2]
 
-      var circleFour = document.querySelector(".circleFour");
+      var circleFour = document.getElementById("circleFour");
       circleFour.textContent = y[3]
 
-      var circleFive = document.querySelector(".circleFive");
+      var circleFive = document.getElementById("circleFive");
       circleFive.textContent = y[4]
 
-      var circleSix = document.querySelector(".circleSix");
+      var circleSix = document.getElementById("circleSix");
       circleSix.textContent = y[5]
 
       var headingElement = document.getElementById("Target");
       headingElement.innerHTML = target
 
 
-      var Add = document.querySelector(".circleAdd");
-      var Sub = document.querySelector(".circleSubtract");
-      var Mul = document.querySelector(".circleMultiply");
-      var Div = document.querySelector(".circleDivision");
+      var Add = document.getElementById("circleAdd");
+      var Sub = document.getElementById("circleSubtract");
+      var Mul = document.getElementById("circleMultiply");
+      var Div = document.getElementById("circleDivision");
 
       clickAdd = false
       function calcAdd(){
@@ -2176,21 +1890,6 @@
           validFive = true
         }
       }
-
-      // function fillCircle() {
-      //   if(clickedOne == false){
-      //     circleOne.style.backgroundColor = "#a4915e";
-      //     clickedOne = true
-      //   }
-      //   else{
-      //     circleOne.style.backgroundColor = "black";
-      //     clickedOne = false
-      //   }
-      // }
-        // function removeCircle() {
-        //     var circleElement = document.querySelector(".circle");
-        //     circleElement.textContent = x
-        // }
-    </script>
+  </script>
 </body>
 </html>
