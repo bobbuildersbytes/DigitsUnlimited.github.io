@@ -1,216 +1,172 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-  <title>Digits Daily</title>
-  <meta name="description" content="The daily version of digits Unlimited">
+    <title>Digits Daily</title>
+    <meta name="description" content="The daily version of digits unlimited">
     <meta name="keywords" content="wordle game, nyt digits, nyt digits unlimited">
-  <h2  style ="color: white;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-right:0;font-size:4vh">Digits</h2><h2  style ="color: #a4915e;font-family: sans-serif;text-align: center;display: inline;top: 0;padding:0;margin-left:0;font-size:4vh">DAILY</h2>
+    <div class = "button-container">
+      <h2  class="help">DIGITS</h2><h2 class="help" style="color:#a4915e;">DAILY</h2>
+      <button class="Info" onclick = "Information()">?</button>
+      <button class="pill-button" onclick = "bye()">Unlimited Mode</button>
+    </div>
   <style>
+      .help {
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        display: inline;
+        padding:0;
+        margin:0;
+        font-size:3vw;
+      }
+      body {
+          /*display: flex;*/
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #000000;
+        }
+        .page {
+          /*padding: 20px;*/
+        }
+        .container {
+          /*padding-top: 5vh;*/
+          display: flex;
+          flex-direction: column;  
+          align-items: center;
+        }
+
+        .button-container {
+          display: flex;
+          flex-direction: row; /* Align items side by side */
+          align-items: flex-start;
+        }
+
+        .pill-button {
+              position: absolute;
+            /*top : 1%;
+            left : 85%;*/
+            background-color: #a4915e;
+            color: white;
+            font-size: 1vw;
+            padding: 1.4vw;
+            border: none;
+            border-radius: 5vw;
+            cursor: pointer;
+            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+            margin-left : 83%;
+            margin-top:  0.5%;
+          }
+
+        .Info{
+          position: absolute; 
+            /*top: 1%; 
+            left: 95%;*/
+            width: 0.01vw;
+            height: 0.01vw;
+            border-radius: 5vw;
+            background-color: #a4915e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            font-size: 2vw;
+            margin-top:  0.5%;
+             margin-left: 95%;
+            font-family: sans-serif;
+        }
+
+        .circle-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 3vw;
+          max-width: 800px;
+          padding: 3vh;
+        }
+
         .circle {
-            position: absolute; 
-            font-family: sans-serif;
-            top: 28%;
-            left: 29%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
+          border-radius: 50%;
+          border: none;
             outline: none;
             border: calc(0.008 * 100vw) solid #a4915e;
             cursor: pointer;
             color: white;
-            font-size: 4vw;
-        }
-        .circleTwo {
-            position: absolute; 
-            top: 28%; 
-            left: 45%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleThree {
-            position: absolute; 
-            top: 28%; 
-            left: 61%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleFour {
-            position: absolute; 
-            top: 55%; 
-            left: 29%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleFive {
-            position: absolute; 
-            top: 55%; 
-            left: 45%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleSix {
-            position: absolute; 
-            top: 55%; 
-            left: 61%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+          background-color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 10vw;
+          height: 10vw;
+          border-radius: 50%;
+          font-size: 4vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
         }
 
-        .circleAdd {
-            position: absolute; 
-            top: 80%; 
-            left: 62.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+        /*.circle:hover {
+          background-color: #232222;
+        }*/
+
+        .circle-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2vh;
         }
 
-        .circleSubtract {
-            position: absolute; 
-            top: 80%; 
-            left: 52.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
+        .small-circle {
+          border: none;
             outline: none;
             border: calc(0.005 * 100vw) solid #a4915e;
             cursor: pointer;
             color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
-        }
-        .circleMultiply {
-            position: absolute; 
-            top: 80%; 
-            left: 42.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+          background-color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 7vw;
+          height: 7vw;
+          border-radius: 50%;
+          font-size: 4vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
+          margin: 0 0.5vh; 
         }
 
-        .circleDivision {
-            position: absolute; 
-            top: 80%; 
-            left: 32.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
+        .small-circle-two {
+          border: none;
             outline: none;
             border: calc(0.005 * 100vw) solid #a4915e;
             cursor: pointer;
             color: white;
-            font-size: 4vw;
-            font-family: sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 7vw;
+          height: 7vw;
+          border-radius: 50%;
+          font-size: 1.8vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
+          margin: 0 1vh; 
+          background-color: #a4915e;
         }
-       .popup {
+
+        /*.small-circle:hover {
+          background-color: #141414;
+        }*/
+
+        .popup {
             background-color: #000000;
+            border-radius: 5vw;
             padding: 5%;
             box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
             border: 1vw solid #a4915e;
@@ -223,15 +179,30 @@
             background-color: #000000;
             padding: 8%;
             box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border-radius: 5vw;
             border: 1vw solid #a4915e;
             display: flex; /* Use Flexbox to center content */
             flex-direction: column; /* Stack elements vertically */
             align-items: center; /* Center horizontally */
             justify-content: center;
         }
-        .popupThree {
+
+        .Dayoverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Daypopup {
             background-color: #000000;
-            padding: 4%;
+            padding: 5%;
+            border-radius: 5vw;
             box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
             border: 1vw solid #a4915e;
             display: flex; /* Use Flexbox to center content */
@@ -239,51 +210,54 @@
             align-items: center; /* Center horizontally */
             justify-content: center;
         }
-        .circleTest {
-            position: absolute; 
-            top: 95%; 
-            left: 42.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
             justify-content: center;
             align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
-        }
-        .Undo {
-            position: absolute; 
-            top: 95%; 
-            left: 52.5%;
-            width: 7vw;
-            height: 7vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
         }
 
+        .overlayagain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlayThree {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popupThree {
+            background-color: #000000;
+            padding: 4%;
+            border-radius: 5vw;
+            box-shadow: 0 0 1% rgba(0, 0, 0, 0.3);
+            border: 1vw solid #a4915e;
+            display: flex; /* Use Flexbox to center content */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+        }
         .GiveUp {
             position: absolute; 
-            top: 95%; 
-            left: 42.5%;
             width: 7vw;
             height: 7vw;
             border-radius: 50%;
@@ -332,7 +306,7 @@
             margin-bottom: 0;
         }
         button {
-
+          border-radius: 5vw;
           text-align: center;
           border-radius: 3%;
           font-family: sans-serif;
@@ -342,62 +316,8 @@
           padding:  2vw;
           border: 0.3vw solid #a4915e;
         }
-/*        h2 {
-            color: white;
-            font-family: sans-serif;
-            font-size: 8vw;
-            text-align: center;
-        }*/
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .overlayagain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .overlayThree {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .pill-button {
-              position: absolute;
-            top : 1%;
-            left : 85%;
-            background-color: #a4915e;
-            color: white;
-            font-size: 1vw;
-            padding: 1vw;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
-          }
-
         #DifficultyLevel {
-          width: 10lw;
+          width: 10lh;
           height: 5vw;
           background-color: transparent;
           color: white;
@@ -413,218 +333,86 @@
             color: white;
 
         }
-        .Info{
-          position: absolute; 
-            top: 1%; 
-            left: 95%;
-            width: 2.3vw;
-            height: 2.3vw;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vw;
-            font-family: sans-serif;
-        }
-
         @media(max-width: 1170px){
-            .pill-button {
-              position: absolute;
-            top : 1%;
-            left : 55%;
-            background-color: #a4915e;
-            color: white;
-            font-size: 2vh;
-            padding: 1vh;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 2vw 5vw rgba(0, 0, 0, 0.2);
+          .circle{
+            width : 25vw;
+            height : 25vw;
+            font-size : 8vw
+          }
+          .circle-grid{
+            padding : 2vh;
+          }
+          .small-circle{
+            width :15vw;
+            height :15vw;
+            font-size: 8vw;
+          }
+          .small-circle-two{
+            width :15vw;
+            height :15vw;
+            font-size: 3.5vw;
           }
           .Info{
-          position: absolute; 
-            top: 1%; 
-            left: 90%;
-            width: 3.8vh;
-            height: 3.8vh;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
-
-          .circle {
-            top: 28%;
-            left: 10%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
+            width: 6vw;
+            height: 6vw;
+            font-size : 4vw;
+            margin-left : 92%;
           }
-          .circleTwo {
-            top: 28%;
-            left: 40%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
+          .pill-button{
+            font-size : 2.8vw;
+            margin-left: 66%;
           }
-          .circleThree {
-            top: 28%;
-            left: 70%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleFour {
-            top: 48%;
-            left: 10%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleFive {
-            top: 48%;
-            left: 40%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleSix {
-            top: 48%;
-            left: 70%;
-            width: 12vh;
-            height: 12vh;
-            font-size: 5vh;
-          }
-          .circleSubtract {
-            position: absolute; 
-            top: 67%; 
-            left: 51.5%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleAdd {
-            position: absolute; 
-            top: 67%; 
-            left: 70%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleMultiply {
-            position: absolute; 
-            top: 67%; 
-            left: 33.5%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .circleDivision {
-            position: absolute; 
-            top: 67%; 
-            left: 15%;
-            width: 8vh;
-            height: 8vh;
-            font-size: 4vh;
-          }
-          .Undo {
-            position: absolute; 
-            top: 80%; 
-            left: 51.5%;
-            width: 7vh;
-            height: 7vh;
-            border-radius: 50%;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
-        .GiveUp {
-            position: absolute; 
-            top: 80%; 
-            left: 33.5%;
-            width: 7vh;
-            height: 7vh;
-            border-radius: 50%;
-            background-color: #a4915e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.005 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 1.5vh;
-            font-family: sans-serif;
-        }
-        .circleTest {
-            position: absolute; 
-            top: 80%; 
-            left: 33.5%;
-            width: 7vh;
-            height: 7vh;
-            border-radius: 50%;
-            font-size: 2vh;
-            font-family: sans-serif;
-        }
           h1{
-            margin-top: 5vh;
-            font-size: 10vh;
+            font-size : 15vw;
+          }
+          .help{
+            font-size : 6vw
           }
         }
-    </style>
+
+  </style>
 </head>
-<body bgcolor="#000000">
-
-    <h1 id="Target"></h1>
-    <div class="circle" onclick="calcOne()"></div>
-    <div class="circleTwo" onclick="calcTwo()"></div>
-    <div class="circleThree" onclick="calcThree()"></div>
-    <div class="circleFour" onclick="calcFour()"></div>
-    <div class="circleFive" onclick="calcFive()"></div>
-    <div class="circleSix" onclick="calcSix()"></div>
-    <div class="circleAdd" onclick="calcAdd()">+</div>
-    <div class="circleSubtract" onclick="calcSub()">-</div>
-    <div class="circleMultiply" onclick="calcMul()">x</div>
-    <div class="circleDivision" onclick="calcDiv()">÷</div>
-    <div class="Info" onclick = "Information()">?</div>
-    <!-- <div class="circleTest" onclick="closePopup()">Quit</div> -->
-    <!-- <div class="Next" onclick = "Next()">Next</div> -->
-    <div class="GiveUp" onclick="giveUp()">Give Up</div>
-    <div class="Undo" onclick = "undo()">Undo</div>
-    <button class="pill-button" onclick = "bye()">Unlimited Mode</button>
-
-    <div class="overlay">
+<body>
+  <div class = "page">
+    <div class="container">
+      <!-- <div class="button-container">
+        <button class="Info" onclick = "Information()">?</button>
+        <button class="pill-button" onclick = "bye()">Unlimited Mode</button>
+      </div> -->
+      <h1 id="Target"></h1>
+      <div class="circle-grid">
+        <div class="circle" id="circle" onclick="calcOne()">1</div>
+        <div class="circle" id="circleTwo" onclick="calcTwo()">2</div>
+        <div class="circle" id="circleThree" onclick="calcThree()">3</div>
+        <div class="circle" id="circleFour" onclick="calcFour()">4</div>
+        <div class="circle" id="circleFive" onclick="calcFive()">5</div>
+        <div class="circle" id="circleSix" onclick="calcSix()">6</div>
+      </div>
+      <div class="circle-row">
+        <div class="small-circle" id = "circleDivision" onclick="calcDiv()">÷</div>
+        <div class="small-circle" id = "circleMultiply" onclick="calcMul()">x</div>
+        <div class="small-circle" id = "circleSubtract" onclick="calcSub()">-</div>
+        <div class="small-circle" id = "circleAdd" onclick="calcAdd()">+</div>
+      </div>
+      <div class="circle-row">
+        <div class="small-circle-two" id = "Undo" onclick = "giveUp()">Give Up</div>
+        <div class="small-circle-two" id = "Undo" onclick = "undo()">Undo</div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay">
         <div class="popup">
             <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
             <button onclick="Next()">Next Level</button>
         </div>
     </div>
-
-    <div class="overlayagain">
+  <div class="overlayagain">
         <div class="bigpopup">
             <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:4vw">CONGRATS!</h2>
-            <button onclick="copyToClipboard(total)">Share</button>
+            <button onclick="copyToClipboard(total)" style="border-radius: 18px;">Share</button>
         </div>
-    </div>
-
-    <div class="overlayThree">
+  </div>
+  <div class="overlayThree">
         <div class="popupThree">
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Perform operations on the 6 given numbers in order to reach the target number</h3>
             <h3 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:1.5vw">Invalid calculations will not be counted(ex. calculations that results in fractions or negative numbers)</h3>
@@ -633,30 +421,30 @@
             <button onclick="closePopupThree()" style = "font-size: 1.5vw;padding:1vw">Close</button>
         </div>
     </div>
-
-    <!-- <div class="overlayagain">
-        <div class="bigpopup">
-            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:3vw">Welcome to Digits Unlimited!</h2>
-            <h2 style="color:white;font-family:sans-serif;text-align:center;font-size:2vw">Choose Your Difficulty Level</h2>
-            <select id="DifficultyLevel" onchange="openPopupTwo()">
-              <option value="Select">Select</option>
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-              <option value="Impossible">Impossible</option>
-            </select>
+    <div class="Dayoverlay">
+        <div class="Daypopup">
+            <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:3vw">You have already Played Today</h2>
+            <h2 style ="color: white;font-family: sans-serif;text-align: center;display;font-size:2vw">Come back tommorrow or play unlimited</h2>
+            <button onclick = "bye()" style = "border-radius: 2vw;">Unlimited Mode</button>
         </div>
-    </div> -->
-
+    </div> 
+  </div>
   <script>
-    actions = ""
-    total = ""
-    daySince = -1
-    function bye(){
-        const websiteURL = "index.html"; // Replace this with the URL of the destination website
-        window.location.href = websiteURL;
-      }
-    function countSubstringOccurrences(mainString, subString) {
+      onedel = false
+      twodel = false
+      threedel = false
+      fourdel = false
+      fivedel = false
+      sixdel = false
+      // openPopupTwo()
+      target = null
+      y = []
+      pls = null
+      undos = []
+      actions = ""
+      total = ""
+      daySince = -1
+      function countSubstringOccurrences(mainString, subString) {
       let count = 0;
       let index = -1;
       
@@ -666,12 +454,22 @@
 
       return count;
     }
+    function openWinPopup(){
+        var overlayagain = document.querySelector(".overlayagain");
+        overlayagain.style.display = "flex";
+
+        const currentDateTimeEST = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+
+        localStorage.setItem("myVariable", currentDateTimeEST);
+        // To get the variable from LocalStorage:
+
+        // const storedValue = localStorage.getItem("myVariable");
+        // console.log(storedValue); // Output: "Hello, World!"
+
+        // copyToClipboard(total)
+      }
     function copyToClipboard(textToCopy) {
         textToCopy = "Digits Daily #" + (daySince+1) + " (" + (4-countSubstringOccurrences(textToCopy,"Skipped")) + "/4)" +"\n" + textToCopy + "\n" + actions
-        // const line1 = "Digits #112 (15/15⭐)";
-        // const line2 = "61 (61)   ✖➖➖";
-        // const line3 = "106 (106) ✖➕➗➕➕";
-        // const line4 = "229 (229) ✖➕";
 
         // // Combine the four lines with newlines
         // const textToCopy = `${line1}\n${line2}\n${line3}\n${line4}`;
@@ -742,8 +540,8 @@
      // var headingElement = document.getElementById("Target");
       headingElement.innerHTML = x[diff][0]
 
-      y = x[diff].slice(1)
       target = x[diff][0]
+      y = x[diff].slice(1)
 
       clickedOne = false
       clickedTwo = false
@@ -751,6 +549,11 @@
       clickedFour = false
       clickedFive = false
       clickedSix = false
+
+      clickSub = false;
+    clickMul = false;
+    clickDiv = false;
+    clickAdd = false;
 
       onedel = false
       twodel = false
@@ -798,26 +601,83 @@
         }
         else{
             total = total + "\n" + "Skipped"
+            clickedOne = false
+      clickedTwo = false
+      clickedThree = false
+      clickedFour = false
+      clickedFive = false
+      clickedSix = false
+
+      clickSub = false;
+    clickMul = false;
+    clickDiv = false;
+    clickAdd = false;
+
+      onedel = false
+      twodel = false
+      threedel = false
+      fourdel = false
+      fivedel = false
+      sixdel = false
+
+      circleOne.style.backgroundColor = "black";
+      circleTwo.style.backgroundColor = "black";
+      circleThree.style.backgroundColor = "black";
+      circleFour.style.backgroundColor = "black";
+      circleFive.style.backgroundColor = "black";
+      circleSix.style.backgroundColor = "black";
+      circleOne.style.color = "white";
+        circleOne.style.border = "calc(0.008 * 100vw) solid #a4915e";
+
+        circleTwo.style.color = "white";
+        circleTwo.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleThree.style.color = "white";
+        circleThree.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleFour.style.color = "white";
+        circleFour.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleFive.style.color = "white";
+        circleFive.style.border = "calc(0.008 * 100vw) solid #a4915e";
+        circleSix.style.color = "white";
+        circleSix.style.border = "calc(0.008 * 100vw) solid #a4915e";
             actions = ""
             openWinPopup()
         }
     }
     diff = 0
     x = []
-    // Function to display the result on the webpage
+
+    function openDayPopup(){
+        var Dayoverlay = document.querySelector(".Dayoverlay");
+        Dayoverlay.style.display = "flex";
+      }
+
     function displayDaysAway() {
       const targetDate = '2023-08-02';
+      const currentTime = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+      const currentDateTimeEST = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      // To set the variable in LocalStorage:
+
+      if (localStorage.getItem("myVariable") !== null) {
+        const storedValue = localStorage.getItem("myVariable");
+        // console.log(storedValue)
+        // console.log(currentDateTimeEST)
+      if(storedValue == currentDateTimeEST){
+        console.log("YOU MAY NOT ENTER UNDER ANY CIRCUMSTANCES")
+        openDayPopup()
+      }
+    } else {
+      localStorage.setItem("myVariable", "Hello, World!");
+    }
+
       const daysAway = calculateDaysAway(targetDate);
 
       // Get the current date in EST
-      const currentDateTimeEST = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      // console.log(currentDateTimeEST)
 
       // document.getElementById('daysAway').innerText = `The current date in EST is ${currentDateTimeEST}. 
       //   There are ${daysAway} days away from July 29, 2023 in EST.`;
 
       // Calculate time until midnight in EST
-      const currentTime = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
-      console.log(currentTime)
       const msUntilMidnight = new Date(`${currentDateTimeEST} 23:59:59`) - new Date(`${currentDateTimeEST} ${currentTime}`);
       daySince = Math.abs(daysAway)
       x = z[Math.abs(daysAway)]
@@ -845,7 +705,7 @@
       headingElement.innerHTML = x[diff][0]
 
       target = x[diff][0]
-      actions = target + " "
+      actions = target + "  "
 
       y = x[diff].slice(1)
       // Schedule a page reload at midnight in EST
@@ -868,6 +728,10 @@
       y = []
       pls = null
       undos = []
+      function bye(){
+        const websiteURL = "index.html"; // Replace this with the URL of the destination website
+        window.location.href = websiteURL;
+      }
       function Information(){
         var overlay = document.querySelector(".overlayThree");
         overlay.style.display = "flex";
@@ -886,7 +750,6 @@
           for(let i = 0;i<last.length;i++){
             lasty = last[i]
             lasty = lasty.split("|")
-            actions = actions.slice(0, actions.length - 1)
             console.log(lasty)
             console.log(lasty[0])
             console.log(lasty[1])
@@ -939,63 +802,66 @@
           clickedFour = false
           clickedFive = false
           clickedSix = false
+          clickAdd = false
+          clickSub = false
+          clickMul = false
+          clickDiv = false
           circleOne.style.backgroundColor = "black";
           circleTwo.style.backgroundColor = "black";
           circleThree.style.backgroundColor = "black";
           circleFour.style.backgroundColor = "black";
           circleFive.style.backgroundColor = "black";
           circleSix.style.backgroundColor = "black";
+          Add.style.backgroundColor = "black";
+          Sub.style.backgroundColor = "black";
+          Mul.style.backgroundColor = "black";
+          Div.style.backgroundColor = "black";
           first = -1
           second = -2
           firstIn = -1
           curop = ""
+          actions = actions.slice(0, actions.length - 1)
         }
       }
-
-      function openWinPopup(){
-        var overlayagain = document.querySelector(".overlayagain");
-        overlayagain.style.display = "flex";
-        // copyToClipboard(total)
-      }
-      function openPopupTwo() {
-            var overlayagain = document.querySelector(".overlayagain");
-            overlayagain.style.display = "flex";
-            const dropdown = document.getElementById("DifficultyLevel");
-            const Level = dropdown.value;
-            // const dropdown = document.getElementById("DifficultyLevel");
-            // const Level = dropdown.value;
-            // if(Level == "Easy"){
-            //   closePopupTwo()
-            //   while(numTar <= 0){
-            //     generate()
-            //   }
-            //   // pls = Level
-            //   // console.log(Level)
-            //   // console.log(pls)
-            // }
-            // else if(Level == "Medium"){
-            //   closePopupTwo()
-            //   while(numTar <= 0){
-            //     generateMedium()
-            //   }
-            // }
-            // else if(Level == "Hard"){
-            //   closePopupTwo()
-            //   do{
-            //     generateHard()
-            //   }while(numTar <= 0)
-            // }
-            // else if(Level == "Impossible"){
-            //   closePopupTwo()
-            //   do{
-            //     generateImpossible()
-            //   }while(numTar <= 0)
-            // }
-      }
-      function closePopupTwo() {
-            var overlayagain = document.querySelector(".overlayagain");
-            overlayagain.style.display = "none";
-      }
+      // function openPopupTwo() {
+      //       var overlayagain = document.querySelector(".overlayagain");
+      //       overlayagain.style.display = "flex";
+      //       const dropdown = document.getElementById("DifficultyLevel");
+      //       const Level = dropdown.value;
+      //       // const dropdown = document.getElementById("DifficultyLevel");
+      //       // const Level = dropdown.value;
+      //       if(Level == "Easy"){
+      //         closePopupTwo()
+      //         while(numTar <= 0){
+      //           generate()
+      //         }
+      //         // pls = Level
+      //         // console.log(Level)
+      //         // console.log(pls)
+      //       }
+      //       else if(Level == "Medium"){
+      //         closePopupTwo()
+      //         while(numTar <= 0){
+      //           generateMedium()
+      //         }
+      //       }
+      //       else if(Level == "Hard"){
+      //         closePopupTwo()
+      //         do{
+      //           generateHard()
+      //         }while(numTar <= 0)
+      //       }
+      //       else if(Level == "Impossible"){
+      //         closePopupTwo()
+      //         do{
+      //           generateImpossible()
+      //         }while(numTar <= 0)
+      //       }
+      // }
+      // function closePopupTwo() {
+      //       var overlayagain = document.querySelector(".overlayagain");
+      //       overlayagain.style.display = "none";
+      // }
       function openPopup() {
             var overlay = document.querySelector(".overlay");
             overlay.style.display = "flex";
@@ -1003,283 +869,45 @@
       function closePopup() {
             location.reload();
       }
-      function operations(array,x,y,targety,level){
-        addarray = [...array]
-        a = addarray[x]
-        b = addarray[y]
-        addarray.push(addarray[x]+addarray[y])
-        addarray.splice(x,1)
-        if(x < y){
-          addarray.splice(y-1,1)
-        }
-        else{
-          addarray.splice(y,1)
-        }
-        // console.log(addarray)
-        combinations(addarray,targety,level)
-
-
-        minarray = [...array]
-        a = minarray[x]
-        b = minarray[y]
-        minarray.push(Math.abs((minarray[x]-minarray[y])))
-        minarray.splice(x,1)
-        if(x < y){
-          minarray.splice(y-1,1)
-        }
-        else{
-          minarray.splice(y,1)
-        }
-        // console.log(minarray)
-        combinations(minarray,targety,level)
-
-
-        mularray = [...array]
-        a = mularray[x]
-        b = mularray[y]
-        mularray.push((mularray[x]*mularray[y]))
-        mularray.splice(x,1)
-        if(x < y){
-          mularray.splice(y-1,1)
-        }
-        else{
-          mularray.splice(y,1)
-        }
-        // console.log(mularray)
-        combinations(mularray,targety,level)
-
-
-        divarray = [...array]
-        a = divarray[x]
-        b = divarray[y]
-        if(divarray[y]!= 0 && divarray[x]%divarray[y] == 0){
-          divarray.push(divarray[x]/divarray[y])
-          divarray.splice(x,1)
-          if(x < y){
-            divarray.splice(y-1,1)
-          }
-          else{
-            divarray.splice(y,1)
-          }
-          combinations(divarray,target,level)
-        // console.log(divarray)
-        }
-        else if(divarray[x]!= 0 && divarray[y]%divarray[x] == 0){
-          divarray.push(divarray[y]/divarray[x])
-          divarray.splice(x,1)
-          if(x < y){
-            divarray.splice(y-1,1)
-          }
-          else{
-            divarray.splice(y,1)
-          }
-          combinations(divarray,target,level)
-        }
-      }
-      numTar = 0
-      bigNum = 10000
-      // level = 0
-      // function combinations(array,targety,level){
-      //   if(array.includes(targety) == true){
-      //     numTar = numTar+1
-      //     if(level < bigNum){
-      //       bigNum = level
-      //     }
-      //   }
-      //   else{
-      //     level = level+1
-      //     for(let i = 0;i < array.length;i++){
-      //       for(let z = i+1;z<array.length;z++){
-      //         // console.log(array[i],array[z])
-      //         operations(array,i,z,targety,level)
-      //       }
-      //     }
-      //   }
-      // }
-
-      // function generate(){
-      //   console.log(pls)
-      //   target = Math.floor(Math.random() * 50) + 30;
-      //   c = 0
-      //   while(c < 6){
-      //     b = Math.floor(Math.random() * 18) + 2;
-      //     if(y.includes(b) == false){
-      //       c = c+1
-      //       y.push(b)
-      //     }
-      //   }
-      //   combinations(y,target,0)
-      //   circleOne.textContent = y[0]
-      //   circleTwo.textContent = y[1]
-      //   circleThree.textContent = y[2]
-      //   circleFour.textContent = y[3]
-      //   circleFive.textContent = y[4]
-      //   circleSix.textContent = y[5]
-      //   headingElement.innerHTML = target
-      //   // console.log(bigNum)
-      // }
-
-      // function generateMedium(){
-      //   console.log(pls)
-      //   target = Math.floor(Math.random() * 200) + 100;
-      //   c = 0
-      //   while(c < 6){
-      //     b = Math.floor(Math.random() * 18) + 2;
-      //     if(y.includes(b) == false){
-      //       c = c+1
-      //       y.push(b)
-      //     }
-      //   }
-      //   combinations(y,target,0)
-      //   circleOne.textContent = y[0]
-      //   circleTwo.textContent = y[1]
-      //   circleThree.textContent = y[2]
-      //   circleFour.textContent = y[3]
-      //   circleFive.textContent = y[4]
-      //   circleSix.textContent = y[5]
-      //   headingElement.innerHTML = target
-      //   // console.log(bigNum)
-      // }
-
-      // function generateHard(){
-      //   console.log(pls)
-      //   target = Math.floor(Math.random() * 200) + 300;
-      //   c = 0
-      //   while(c < 6){
-      //     b = Math.floor(Math.random() * 18) + 2;
-      //     if(y.includes(b) == false){
-      //       c = c+1
-      //       y.push(b)
-      //     }
-      //   }
-      //   combinations(y,target,0)
-      //   circleOne.textContent = y[0]
-      //   circleTwo.textContent = y[1]
-      //   circleThree.textContent = y[2]
-      //   circleFour.textContent = y[3]
-      //   circleFive.textContent = y[4]
-      //   circleSix.textContent = y[5]
-      //   headingElement.innerHTML = target
-      //   // console.log(bigNum)
-      // }
-
-      // function generateImpossible(){
-      //   console.log(pls)
-      //   target = Math.floor(Math.random() * 500) + 500;
-      //   c = 0
-      //   while(c < 6){
-      //     b = Math.floor(Math.random() * 18) + 2;
-      //     if(y.includes(b) == false){
-      //       c = c+1
-      //       y.push(b)
-      //     }
-      //   }
-      //   combinations(y,target,0)
-      //   circleOne.textContent = y[0]
-      //   circleTwo.textContent = y[1]
-      //   circleThree.textContent = y[2]
-      //   circleFour.textContent = y[3]
-      //   circleFive.textContent = y[4]
-      //   circleSix.textContent = y[5]
-      //   headingElement.innerHTML = target
-      //   // console.log(bigNum)
-      // }
-
-      // console.log(checker)
-      // if(checker == "Easy"){
-      // while(bigNum != 3){
-      //   generate()
-      // }
-      console.log(bigNum)
-
-      // }
-      // console.log(y)
-      // console.log(target)
-      // console.log(numTar)
-      // console.log(level)
-
-      // const dropdown = document.getElementById("fruitDropdown");
-      //   dropdown.addEventListener("change", function() {
-      //       const selectedFruit = dropdown.value;
-      //       if(selectedFruit == "Easy"){
-      //         while(level != 2){
-      //           generate()
-      //         }
-      //       }
-      //       else if(selectedFruit == "Medium"){
-      //         while(level != 3){
-      //           generate()
-      //         }
-      //       }
-      //       else if(selectedFruit == "Hard"){
-      //         while(level != 4){
-      //           generate()
-      //         }
-      //       }
-      //   });
-
-      // var headingElement = document.getElementById("Target");
-      // headingElement.innerHTML = target
-
 
       first = -1
       firstIn = -1
       second = -2
       curop = ""
 
-      // y = [1,2,3,4,5,6]
-      // y = [Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2,Math.floor(Math.random() * 18) + 2]
-      var circleOne = document.querySelector(".circle");
-      // circleOne.textContent = y[0]
+      var circleOne = document.getElementById("circle");
+      circleOne.textContent = y[0]
 
-      var circleTwo = document.querySelector(".circleTwo");
-      // circleTwo.textContent = y[1]
+      var circleTwo = document.getElementById("circleTwo");
+      circleTwo.textContent = y[1]
 
-      var circleThree = document.querySelector(".circleThree");
-      // circleThree.textContent = y[2]
+      var circleThree = document.getElementById("circleThree");
+      circleThree.textContent = y[2]
 
-      var circleFour = document.querySelector(".circleFour");
-      // circleFour.textContent = y[3]
+      var circleFour = document.getElementById("circleFour");
+      circleFour.textContent = y[3]
 
-      var circleFive = document.querySelector(".circleFive");
-      // circleFive.textContent = y[4]
+      var circleFive = document.getElementById("circleFive");
+      circleFive.textContent = y[4]
 
-      var circleSix = document.querySelector(".circleSix");
-      // circleSix.textContent = y[5]
-
-      // var circleOne = document.querySelector(".circle");
-      // circleOne.textContent = y[0]
-
-      // var circleTwo = document.querySelector(".circleTwo");
-      // circleTwo.textContent = y[1]
-
-      // var circleThree = document.querySelector(".circleThree");
-      // circleThree.textContent = y[2]
-
-      // var circleFour = document.querySelector(".circleFour");
-      // circleFour.textContent = y[3]
-
-      // var circleFive = document.querySelector(".circleFive");
-      // circleFive.textContent = y[4]
-
-      // var circleSix = document.querySelector(".circleSix");
-      // circleSix.textContent = y[5]
+      var circleSix = document.getElementById("circleSix");
+      circleSix.textContent = y[5]
 
       var headingElement = document.getElementById("Target");
-      // headingElement.innerHTML = target
+      headingElement.innerHTML = target
 
 
-      var Add = document.querySelector(".circleAdd");
-      var Sub = document.querySelector(".circleSubtract");
-      var Mul = document.querySelector(".circleMultiply");
-      var Div = document.querySelector(".circleDivision");
+      var Add = document.getElementById("circleAdd");
+      var Sub = document.getElementById("circleSubtract");
+      var Mul = document.getElementById("circleMultiply");
+      var Div = document.getElementById("circleDivision");
 
       clickAdd = false
       function calcAdd(){
         if(clickAdd == false){
           if(first != -1){
             curop = "+"
-            actions = actions + "➕"
+            // actions = actions + "➕"
             Add.style.backgroundColor = "#a4915e";
 
             Sub.style.backgroundColor = "black";
@@ -1294,7 +922,7 @@
         else{
           clickAdd = false
           curop = ""
-          actions = actions.slice(0, actions.length - 1)
+          // actions = actions.slice(0, actions.length - 1)
           Add.style.backgroundColor = "black";
         }
       }
@@ -1304,7 +932,7 @@
         if(clickSub == false){
           if(first != -1){
             curop = "-"
-            actions = actions + "➖"
+            // actions = actions + "➖"
             Sub.style.backgroundColor = "#a4915e";
 
             Add.style.backgroundColor = "black";
@@ -1319,7 +947,7 @@
         else{
           clickSub = false
           curop = ""
-          actions = actions.slice(0, actions.length - 1)
+          // actions = actions.slice(0, actions.length - 1)
           Sub.style.backgroundColor = "black";
         }
       }
@@ -1329,7 +957,7 @@
         if(clickMul == false){
           if(first != -1){
             curop = "*"
-            actions = actions + "✖"
+            // actions = actions + "✖"
             Mul.style.backgroundColor = "#a4915e";
 
             Add.style.backgroundColor = "black";
@@ -1344,7 +972,7 @@
         else{
           clickMul = false
           curop = ""
-          actions = actions.slice(0, actions.length - 1)
+          // actions = actions.slice(0, actions.length - 1)
           Mul.style.backgroundColor = "black";
         }
       }
@@ -1354,7 +982,7 @@
         if(clickDiv == false){
           if(first != -1){
             curop = "/"
-            actions = actions+"➗"
+            // actions = actions+"➗"
             Div.style.backgroundColor = "#a4915e";
 
             Add.style.backgroundColor = "black";
@@ -1369,7 +997,7 @@
         else{
           clickDiv = false
           curop = ""
-          actions = actions.slice(0, actions.length - 1)
+          // actions = actions.slice(0, actions.length - 1)
           Div.style.backgroundColor = "black";
         }
       }
@@ -1392,16 +1020,19 @@
               if(curop == "+"){
                 y[0] = first+second
                 clickAdd = false
+                actions = actions + "➕"
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[0] = first*second
                 clickMul = false
+                actions = actions + "✖"
                 Mul.style.backgroundColor = "black"
               }
               else if(curop == "-"){
                 if(0 < first - second ){
                   y[0] = first-second
+                  actions = actions + "➖"
                   clickSub = false
                   Sub.style.backgroundColor = "black"
                 }
@@ -1437,6 +1068,7 @@
                 if(first%second == 0){
                   y[0] = first/second
                   clickDiv = false
+                  actions = actions+"➗"
                   Div.style.backgroundColor = "black"
                 }
                 else{
@@ -1579,16 +1211,19 @@
               if(curop == "+"){
                 y[1] = first+second
                 clickAdd = false
+                actions = actions + "➕"
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[1] = first*second
+                actions = actions + "✖"
                 clickMul = false
                 Mul.style.backgroundColor = "black"
               }
               else if(curop == "-"){
                 if(0 < first - second ){
                   y[1] = first-second
+                  actions = actions + "➖"
                   clickSub = false
                   Sub.style.backgroundColor = "black"
                 }
@@ -1624,6 +1259,7 @@
                 if(first%second == 0){
                   y[1] = first/second
                   clickDiv = false
+                  actions = actions+"➗"
                   Div.style.backgroundColor = "black"
                 }
                 else{
@@ -1766,10 +1402,12 @@
               if(curop == "+"){
                 y[2] = first+second
                 clickAdd = false
+                actions = actions + "➕"
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[2] = first*second
+                actions = actions + "✖"
                 clickMul = false
                 Mul.style.backgroundColor = "black"
               }
@@ -1777,6 +1415,7 @@
                 if(0 < first - second ){
                   y[2] = first-second
                   clickSub = false
+                  actions = actions + "➖"
                   Sub.style.backgroundColor = "black"
                 }
                 else{
@@ -1811,6 +1450,7 @@
                 if(first%second == 0){
                   y[2] = first/second
                   clickDiv = false
+                  actions = actions+"➗"
                   Div.style.backgroundColor = "black"
                 }
                 else{
@@ -1953,16 +1593,19 @@
               if(curop == "+"){
                 y[3] = first+second
                 clickAdd = false
+                actions = actions + "➕"
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[3] = first*second
                 clickMul = false
+                actions = actions + "✖"
                 Mul.style.backgroundColor = "black"
               }
               else if(curop == "-"){
                 if(0 < first - second ){
                   y[3] = first-second
+                  actions = actions + "➖"
                   clickSub = false
                   Sub.style.backgroundColor = "black"
                 }
@@ -1998,6 +1641,7 @@
                 if(first%second == 0){
                   y[3] = first/second
                   clickDiv = false
+                  actions = actions+"➗"
                   Div.style.backgroundColor = "black"
                 }
                 else{
@@ -2141,10 +1785,12 @@
               if(curop == "+"){
                 y[5] = first+second
                 clickAdd = false
+                actions = actions + "➕"
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[5] = first*second
+                actions = actions + "✖"
                 clickMul = false
                 Mul.style.backgroundColor = "black"
               }
@@ -2152,6 +1798,7 @@
                 if(0 < first - second ){
                   y[5] = first-second
                   clickSub = false
+                  actions = actions + "➖"
                   Sub.style.backgroundColor = "black"
                 }
                 else{
@@ -2186,6 +1833,7 @@
                 if(first%second == 0){
                   y[5] = first/second
                   clickDiv = false
+                  actions = actions+"➗"
                   Div.style.backgroundColor = "black"
                 }
                 else{
@@ -2327,12 +1975,14 @@
               clickedFive = true
               second = y[4]
               if(curop == "+"){
+                actions = actions + "➕"
                 y[4] = first+second
                 clickAdd = false
                 Add.style.backgroundColor = "black"
               }
               else if(curop == "*"){
                 y[4] = first*second
+                actions = actions + "✖"
                 clickMul = false
                 Mul.style.backgroundColor = "black"
               }
@@ -2340,6 +1990,7 @@
                 if(0 < first - second ){
                   y[4] = first-second
                   clickSub = false
+                  actions = actions + "➖"
                   Sub.style.backgroundColor = "black"
                 }
                 else{
@@ -2373,6 +2024,7 @@
               else if(curop == "/"){
                 if(first%second == 0){
                   y[4] = first/second
+                  actions = actions+"➗"
                   clickDiv = false
                   Div.style.backgroundColor = "black"
                 }
@@ -2497,91 +2149,7 @@
           validFive = true
         }
       }
-
-    // Call the function when the page loads
-    window.onload = displayDaysAway;
+  window.onload = displayDaysAway;
   </script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Date Calculator</title>
-  <style>
-        /* Optional CSS to style the circle */
-        .circle {
-            position: absolute; 
-            font-family: sans-serif;
-            top: 28%;
-            left: 29%;
-            width: 10vw;
-            height: 10vw;
-            border-radius: 50%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            border: calc(0.008 * 100vw) solid #a4915e;
-            cursor: pointer;
-            color: white;
-            font-size: 4vw;
-        }
-    </style>
-</head>
-<body>
-  <h1>Days Away from July 29, 2023</h1>
-  <p id="daysAway"></p>
-  <div class="circle"></div>
-  <script>
-    daysAway = 5
-    // Function to calculate the days between two dates
-    function calculateDaysAway(targetDate) {
-      const currentDate = new Date();
-      const targetDateObj = new Date(targetDate);
-      const timeDifference = targetDateObj - currentDate;
-      const daysAway = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-      console.log(currentDate)
-      console.log(targetDateObj)
-      console.log(timeDifference)
-      console.log(daysAway)
-      return daysAway;
-    }
-
-    // Function to display the result on the webpage
-    function displayDaysAway() {
-      const targetDate = '2023-07-29';
-      daysAway = calculateDaysAway(targetDate)+1;
-      
-      // Get the current date and time in EST
-      const currentDateTimeEST = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
-      
-      document.getElementById('daysAway').innerText = `The current date and time in EST is ${currentDateTimeEST}. 
-        There are ${daysAway} days away from July 29, 2023 in EST.`;
-        circleOne.textContent = y[daysAway]
-    }
-    y = [1,2,3,4,5]
-    var circleOne = document.querySelector(".circle");
-    // circleOne.textContent = y[daysAway]
-    // Call the function when the page loads
-    window.onload = function() {
-      displayDaysAway();
-
-      // Refresh the page at midnight in EST (every day)
-      setInterval(function() {
-        const currentDate = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
-        const currentTime = new Date(currentDate).toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
-
-        if (currentTime === '12:00:00 AM') {
-          location.reload();
-        }
-      }, 1000); // Check every second
-    };
-  </script>
-</body>
-</html>
- -->
