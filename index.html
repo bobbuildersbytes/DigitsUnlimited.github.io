@@ -81,7 +81,7 @@
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 3vw;
           max-width: 800px;
-          padding: 20px;
+          padding: 3vh;
         }
 
         .circle {
@@ -112,7 +112,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-top: 20px;
+          margin-top: 2vh;
         }
 
         .small-circle {
@@ -132,12 +132,32 @@
           font-weight: bold;
           font-family:  sans-serif;
           color: white;
-          margin: 0 0.5vw; 
+          margin: 0 0.5vh; 
         }
 
         /*.small-circle:hover {
           background-color: #141414;
         }*/
+
+        .small-circle-two {
+          border: none;
+            outline: none;
+            border: calc(0.005 * 100vw) solid #a4915e;
+            cursor: pointer;
+            color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 7vw;
+          height: 7vw;
+          border-radius: 50%;
+          font-size: 1.8vw;
+          font-weight: bold;
+          font-family:  sans-serif;
+          color: white;
+          margin: 0 1vh; 
+          background-color: #a4915e;
+        }
 
         .popup {
             background-color: #000000;
@@ -260,7 +280,7 @@
           .small-circle-two{
             width :15vw;
             height :15vw;
-            font-size: 3.5vw;
+            font-size: 5vw;
           }
           .Info{
             width: 6vw;
@@ -307,8 +327,8 @@
       <div class="small-circle" id = "circleAdd" onclick="calcAdd()">+</div>
     </div>
     <div class="circle-row">
-        <div class="small-circle" id = "Undo" style = "font-size:2vw;background-color: #a4915e;" onclick = "closePopup()">Quit</div>
-        <div class="small-circle" id = "Undo" style = "font-size:2vw;background-color: #a4915e;" onclick = "undo()">Undo</div>
+        <div class="small-circle-two" id = "Undo" onclick = "closePopup()">Quit</div>
+        <div class="small-circle-two" id = "Undo" onclick = "undo()">Undo</div>
       </div>
   </div>
   <div class="overlayagain">
